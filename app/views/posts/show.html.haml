@@ -4,10 +4,12 @@
       .container1__text
         = link_to "Edit", edit_post_path(@post.id), class: "btn btn-primary"
     %ul.list-group
-      %li.list-group-item.list-group-item-primary ニックネーム
-      %li.list-group-item.list-group-item-light 車種
-      %li.list-group-item.list-group-item-success 日付を順番に表示
-      
+      %li.list-group-item.list-group-item-primary
+        = link_to "#{@post.user.nickname}", user_path(@post.user)
+      %li.list-group-item.list-group-item-light 
+        = link_to "#{@post.car.car_type}", car_path(@post.car)
+      %li.list-group-item.list-group-item-success 
+        = @post.date
       %li.list-group-item.list-group-item-danger 
         = @post.weather
       %li.list-group-item.list-group-item-warning 
@@ -35,7 +37,7 @@
         = form_with(model: [@post, @comment], local: true) do |form|
           .input-box
             = form.text_area :text, class: "postComments__comment-box", placeholder: "コメントする", rows: "2" 
-            = form.submit "SEND", class: "postComments__send-btn"
+            = form.submit "SEND", class: "btn btn-primary btn-block"
       - else
         %h3 ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
 

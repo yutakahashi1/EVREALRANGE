@@ -30,5 +30,17 @@
             .field-input
               = f.password_field :password_confirmation, autocomplete: "off"
           
+          .field
+            .field-label
+              = f.label :carmaker_id
+            .field-input
+              = f.select :carmaker_id, Carmaker.all.map { |carmaker| [carmaker.maker, carmaker.id] }, {prompt: "メーカーを選択"}, {class: "form-control"}
+
+          .field
+            .field-label
+              = f.label :car_id
+            .field-input
+              = f.select :car_id, Car.all.map { |car| [car.car_type, car.id] }, {prompt: "車種を選択"}, {class: "form-control"}
+
           .actions
             = f.submit "Create Account", class: 'btn btn-primary'

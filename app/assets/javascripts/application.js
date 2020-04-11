@@ -17,3 +17,10 @@
 
 //= require jquery
 //= require bootstrap-sprockets
+
+//= require highcharts/highcharts
+//= require highcharts/highcharts-more
+//= require highcharts/highstock
+
+//= require chartkick
+//= require Chart.bundle

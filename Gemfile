@@ -69,3 +69,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
 gem 'devise'
+
+gem'lazy_high_charts'
+
+gem "chartkick"
