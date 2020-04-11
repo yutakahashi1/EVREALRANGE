@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :edit, :update, :destroy]
   resources :carmakers, only: [:index, :show]
+  resources :cars, only: [:index, :show]
 end

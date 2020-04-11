@@ -1,0 +1,26 @@
+.container
+  .container_car
+    = @car.car_type
+  = image_tag "#{@car.image}", class: "cars-image"
+  .carsTable 
+    %table
+      %th
+        WLTP
+      %td
+        = "#{@car.WLTP_range}km"
+    %table
+      %th
+        EPA
+      %td
+        = "#{@car.EPA_range}km"
+    - @posts.each do |post| 
+      %table
+        %th
+          = "#{post.user.nickname}"
+          ’s
+          %br Projected Range   
+        %td
+          - estimated_range = (post.distance.to_f/post.consumption.to_f*100).round(1)
+          = link_to "#{estimated_range}km", post_path(post)
+          
+    

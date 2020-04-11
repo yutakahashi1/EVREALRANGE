@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_11_053455) do
+ActiveRecord::Schema.define(version: 2020_04_11_054810) do
 
   create_table "carmakers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "maker", null: false
     t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "car_type"
+    t.text "image"
+    t.float "WLTP_range"
+    t.float "EPA_range"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "carmaker_id"
+    t.index ["carmaker_id"], name: "index_cars_on_carmaker_id"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -45,6 +56,8 @@ ActiveRecord::Schema.define(version: 2020_04_11_053455) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.bigint "carmaker_id"
+    t.bigint "car_id"
+    t.index ["car_id"], name: "index_posts_on_car_id"
     t.index ["carmaker_id"], name: "index_posts_on_carmaker_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
@@ -59,14 +72,19 @@ ActiveRecord::Schema.define(version: 2020_04_11_053455) do
     t.datetime "updated_at", null: false
     t.string "nickname"
     t.bigint "carmaker_id"
+    t.bigint "car_id"
+    t.index ["car_id"], name: "index_users_on_car_id"
     t.index ["carmaker_id"], name: "index_users_on_carmaker_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cars", "carmakers"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "posts", "carmakers"
+  add_foreign_key "posts", "cars"
   add_foreign_key "posts", "users"
   add_foreign_key "users", "carmakers"
+  add_foreign_key "users", "cars"
 end
