@@ -19,37 +19,48 @@
     %form
     .form-inline
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectWeather"} Weather Condition
-    = f.select :weather, [["sunny"],["rainy"],["snowy"]], {include_blank: true, selected: "Choose the weather..."},{id: "inlineFormCustomSelectCondition", class: "custom-select mr-sm-2"}
+    = f.select :weather, [["sunny"],["rainy"],["snowy"]], {include_blank: "Choose the weather..."},{id: "inlineFormCustomSelectCondition", class: "custom-select mr-sm-2"}
 
     
 
     .form-inline
-      = f.number_field :temperature, class: "form-control", placeholder: "Temperature(Celsius)"
+      = f.number_field :temperature, class: "form-control", placeholder: "Temperature(℃)"
       
     %form
     .form-inline
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectStatus"} Driving Status
-    = f.select :driving_status, [["local road"],["highway"],["mountain path"],["USE local road + highway"],["USE local road + mountain path"]], {include_blank: true, selected: "Choose your driving status..."},{id: "inlineFormCustomSelectStatus", class: "custom-select mr-sm-2"}
+    = f.select :driving_status, [["local road"],["highway"],["mountain path"],["USE local road + highway"],["USE local road + mountain path"]], {include_blank: "Choose your driving status..."},{id: "inlineFormCustomSelectStatus", class: "custom-select mr-sm-2"}
     
 
     %form
     .form-inline
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectMode"} Driving Mode
-    = f.select :driving_mode, [["normal"],["sports"],["ludicrous"],["MIX normal + sports"],["MIX sports + ludicrous"]], {include_blank: true, selected: "Choose your driving mode..."},{id: "inlineFormCustomSelectMode", class: "custom-select mr-sm-2"}
+    = f.select :driving_mode, [["normal"],["sports"],["ludicrous"],["MIX normal + sports"],["MIX sports + ludicrous"]], {include_blank: "Choose your driving mode..."},{id: "inlineFormCustomSelectMode", class: "custom-select mr-sm-2"}
 
     %form
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectDistance"} Distance(km)
     .form-inline
-      = f.number_field :distance, class: "form-controll", placeholder: "Distance your trip..."
+      = f.number_field :distance, class: "form-control", placeholder: "Distance your trip..."
 
     %form
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectConsumption"} Consumption(%)
     .form-inline
-      = f.number_field :consumption, class: "form-controll", placeholder: "Battery consumption..."
+      = f.number_field :consumption, class: "form-control", placeholder: "Battery consumption..."
     
     %form
     %label{:for => "exampleFormControlTextarea1"} Additional Comments
     = f.text_area :text, class: "form-control"
+
+    %form
+    .form-inline
+    %label.my-1.mr-2{:for =>"inlineFormCustomSelectMode"} Carmaker
+    = f.select :carmaker_id, Carmaker.all.map { |carmaker| [carmaker.maker, carmaker.id] }, {include_blank: "メーカー名"}, {class: "form-control"}
+
+    %form
+    .form-inline
+    %label.my-1.mr-2{:for =>"inlineFormCustomSelectMode"} Car Type
+    .form_car-type
+      = f.select :car_id, Car.all.map { |car| [car.car_type, car.id] }, {prompt: "車種を選択"}, {class: "form-control"}
     
     .actions
       = f.submit "submit", class: 'btn btn-success btn-block' 

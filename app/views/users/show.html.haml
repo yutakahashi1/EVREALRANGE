@@ -14,9 +14,9 @@
 
     %table
       %th
-        Car Type
+        Your Car
       %td
-        ユーザーに紐づいた車種
+        = @user.car.car_type
     - @posts.each do |post| 
       %table
         %th

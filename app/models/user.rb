@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :posts
   has_many :comments
-  belongs_to :carmaker, optional: true
-  belongs_to :car, optional: true
+  belongs_to :carmaker
+  belongs_to :car
 end
