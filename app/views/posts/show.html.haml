@@ -1,0 +1,56 @@
+.container
+  .container__show
+    .container1__show
+      .container1__text
+        = link_to "Edit", edit_post_path(@post.id), class: "btn btn-primary"
+    %ul.list-group
+      %li.list-group-item.list-group-item-primary ニックネーム
+      %li.list-group-item.list-group-item-light 車種
+      %li.list-group-item.list-group-item-success 日付を順番に表示
+      
+      %li.list-group-item.list-group-item-danger 
+        = @post.weather
+      %li.list-group-item.list-group-item-warning 
+        = "#{@post.temperature}℃"
+      %li.list-group-item.list-group-item-info 
+        = @post.driving_status
+      %li.list-group-item.list-group-item-light 
+        = @post.driving_mode
+      %li.list-group-item.list-group-item-dark 
+        = "#{@post.distance}km"
+        = "#{@post.consumption}%"
+        
+      %li.list-group-item.list-group-item-primary 
+        - estimated_range = (@post.distance.to_f/@post.consumption.to_f*100).round(1)
+        = "#{estimated_range}km"
+      %li.list-group-item.list-group-item-primary 
+        = @post.text
+
+.container
+  .container__comments
+    .postComments
+      - if current_user
+        %h3 
+          = "<Comments to #{@post.user.nickname}'s Data>"
+        = form_with(model: [@post, @comment], local: true) do |form|
+          .input-box
+            = form.text_area :text, class: "postComments__comment-box", placeholder: "コメントする", rows: "2" 
+            = form.submit "SEND", class: "postComments__send-btn"
+      - else
+        %h3 ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+
+    .userComments
+      %h4
+        = "<Comments>"
+      - if @comments
+        - @comments.each do |comment|
+          .userComments__comment
+            .userComments__comment-info
+              = link_to comment.user.nickname, "/users/#{comment.user_id}", class: "userComments__nickname"
+              .userComments__created-at
+                = comment.created_at 
+                - if comment.user == current_user
+                  = link_to "Delete", post_comment_path(comment.post_id, comment.id), class: "btn btn-warning", method: :delete
+            .userComments__text
+              = comment.text
+            

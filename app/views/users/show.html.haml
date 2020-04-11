@@ -1,0 +1,27 @@
+.container
+  .userTitle
+    = "#{@user.nickname}’s Information"
+  .userEdit-btn
+    - if user_signed_in? && current_user.id == @user.id
+      = link_to "Edit", edit_user_path(@user), class: "btn btn-success"
+  .userTable 
+  
+    %table
+      %th
+        Nickname
+      %td
+        = @user.nickname
+
+    %table
+      %th
+        Car Type
+      %td
+        ユーザーに紐づいた車種
+    - @posts.each do |post| 
+      %table
+        %th
+          Data
+        %td
+          = link_to "#{post.date}", post_path(post)
+          s'
+          %br Data

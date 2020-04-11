@@ -1,0 +1,46 @@
+@import "modules/posts";
+@import "modules/reset";
+@import "modules/registration";
+@import "modules/user";
+@import "modules/comments";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bootstrap";
+
+
+
+
+
+body {
+  background-color: rgb(230, 235, 226);
+}
+
+
+.d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.mb-3.bg-white.border-bottom.shadow-sm {
+  width: 100%;
+}
+
+h1 {
+  position: relative;
+  
+  color: #158b2b;
+  font-size: 20px;
+  padding: 10px 0;
+  text-align: center;
+  margin: 1.5em 0;
+}
+h1:before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 150px;
+  height: 58px;
+  border-radius: 50%;
+  border: 5px solid #a6ddb0;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+ 

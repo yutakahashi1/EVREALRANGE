@@ -1,0 +1,67 @@
+.container__comments {
+  background-color: white;
+
+  .postComments {
+    margin-top: 50px;
+
+    h3 {
+      color: black;
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 10px;
+      
+    }
+      .postComments__comment-box {
+        width: 98%;
+        border: skyblue solid 3px;
+      }
+      .postComments__send-btn {
+        width: 100%;
+        background-color: skyblue;
+        color: white;
+        border-radius: 10px;
+      }
+  }
+
+
+  .userComments {
+    margin-top: 30px;
+    
+    h4 {
+      color: black;
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+      .userComments__comment {
+        margin-bottom: 10px;
+        background-color: rgb(198, 238, 245);
+
+        .userComments__comment-info {
+          display: flex;
+          
+
+          .userComments__nickname {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            margin-left: 15px;
+          }
+          .userComments__created-at {
+            margin-left: 15px;
+            font-size: 10px;
+            line-height: 30px;
+            color: rgb(155, 152, 152);
+          }
+            .btn.btn-warning {
+              border: 1px solid;
+              margin-left: 100px;
+              font-size: 12px;
+            }
+        }
+        .userComments__text {
+          padding-left: 15px;
+        }
+      }
+  }
+}
