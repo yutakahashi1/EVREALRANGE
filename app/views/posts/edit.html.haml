@@ -1,0 +1,54 @@
+= form_with model: @post, local: true do |f|
+  .container
+    .post-form__title
+      RePost Data about your trip!
+    %form
+      %label.my-1.mr-2{:for =>"inlineFormCustomSelectDate"} Date (Year Month Day)
+      .form-inline1
+      
+        = f.date_field :date, class: "form-inline", placeholder: "Date"
+      
+        
+      .form-row
+        .col
+          StartTime
+          = f.time_field :start_time, class: "form-control", placeholder: "StartTime"
+        .col
+          EndTime
+          = f.time_field :end_time, class: "form-control", placeholder: "EndTime"
+
+    %form
+    .form-inline
+    %label.my-1.mr-2{:for =>"inlineFormCustomSelectWeather"} Weather Condition
+    = f.select :weather, [["sunny"],["rainy"],["snowy"]], {}, {id: "inlineFormCustomSelectCondition", class: "custom-select mr-sm-2"}
+    .form-inline
+    = f.number_field :temperature, class: "form-control", placeholder: "Temperature(Celsius)"
+      
+    %form
+    .form-inline
+    %label.my-1.mr-2{:for =>"inlineFormCustomSelectStatus"} Driving Status
+    = f.select :driving_status, [["local road"],["highway"],["mountain path"],["USE local road + highway"],["USE local road + mountain path"]], {},{id: "inlineFormCustomSelectStatus", class: "custom-select mr-sm-2"}
+    
+
+    %form
+    .form-inline
+    %label.my-1.mr-2{:for =>"inlineFormCustomSelectMode"} Driving Mode
+    = f.select :driving_mode, [["normal"],["sports"],["ludicrous"],["MIX normal + sports"],["MIX sports + ludicrous"]], {},{id: "inlineFormCustomSelectMode", class: "custom-select mr-sm-2"}
+
+    %form
+    %label.my-1.mr-2{:for =>"inlineFormCustomSelectDistance"} Distance(km)
+    .form-inline
+      = f.number_field :distance, class: "form-controll", placeholder: "Distance your trip..."
+
+    %form
+    %label.my-1.mr-2{:for =>"inlineFormCustomSelectConsumption"} Consumption(%)
+    .form-inline
+      = f.number_field :consumption, class: "form-controll", placeholder: "Battery consumption..."
+    
+    %form
+    %label{:for => "exampleFormControlTextarea1"} Additional Comments
+    = f.text_area :text, class: "form-control"
+    
+    .form__manage
+      = f.submit "Update", class: 'btn btn-success'
+      = link_to "Delete", post_path(@post.id), class: "btn btn-warning", method: :delete
