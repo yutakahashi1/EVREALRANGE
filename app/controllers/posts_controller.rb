@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    postmaker = Post.find_by(params[:carmaker_id])
+    
   end
 
   def create
@@ -21,6 +21,19 @@ class PostsController < ApplicationController
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
     
+    
+    category = User.pluck(:nickname)
+    categories = []
+    categories << category
+    current_quantity = Post.pluck(:distance)
+
+    @graph = LazyHighCharts::HighChart.new('graph') do |f|
+      f.title(text: '車種別航続可能距離、分布図的行ければ')
+      f.xAxis(categories: category)
+      f.series(name: '在庫数', data: current_quantity, type: "column")
+    end
+    
+
   end
 
   def edit
@@ -41,7 +54,7 @@ class PostsController < ApplicationController
   
   private
   def post_params
-    params.require(:post).permit(:temperature, :weather, :driving_status, :driving_mode, :distance, :consumption, :text, :date, :start_time, :end_time, :car_id, :carmaker_id).merge(user_id: current_user.id)
+    params.require(:post).permit(:temperature, :weather, :AC, :AC_temperature, :driving_status, :driving_mode, :distance, :consumption, :text, :date, :start_time, :end_time, :car_id, :carmaker_id).merge(user_id: current_user.id)
   end
 
   def move_to_index

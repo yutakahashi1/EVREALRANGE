@@ -1,32 +1,74 @@
 .container
   .container__show
     .container1__show
-      .container1__text
-        = link_to "Edit", edit_post_path(@post.id), class: "btn btn-primary"
-    %ul.list-group
-      %li.list-group-item.list-group-item-primary
-        = link_to "#{@post.user.nickname}", user_path(@post.user)
-      %li.list-group-item.list-group-item-light 
+      = link_to "#{@post.user.nickname}", user_path(@post.user), class: "posts_show_nickname"
+    
+    .container1_edit-btn
+      = link_to "Edit", edit_post_path(@post.id), class: "btn btn-success"
+    
+    %table
+      %th
+        Car Type
+      %td
         = link_to "#{@post.car.car_type}", car_path(@post.car)
-      %li.list-group-item.list-group-item-success 
+    %table
+      %th
+        Date
+      %td
         = @post.date
-      %li.list-group-item.list-group-item-danger 
+    %table
+      %th
+        Weather Condition
+      %td
         = @post.weather
-      %li.list-group-item.list-group-item-warning 
+    %table
+      %th
+        Outside Temperature
+      %td
         = "#{@post.temperature}℃"
-      %li.list-group-item.list-group-item-info 
+    %table
+      %th
+        Air Conditioner
+      %td
+        = "#{@post.AC} / #{@post.AC_temperature}℃"
+    %table
+      %th
+        Status
+      %td
         = @post.driving_status
-      %li.list-group-item.list-group-item-light 
+    %table
+      %th
+        Mode
+      %td
         = @post.driving_mode
-      %li.list-group-item.list-group-item-dark 
-        = "#{@post.distance}km"
-        = "#{@post.consumption}%"
-        
-      %li.list-group-item.list-group-item-primary 
-        - estimated_range = (@post.distance.to_f/@post.consumption.to_f*100).round(1)
-        = "#{estimated_range}km"
-      %li.list-group-item.list-group-item-primary 
+    %table
+      %th
+        Driving Distance
+        %br
+        (Consumption)
+      %td 
+
+        = "#{@post.distance} km"
+        %br
+        = "(#{@post.consumption} %)"
+    %table
+      %th
+        Projected Range
+      %td
+        - projected_range = (@post.distance.to_f/@post.consumption.to_f*100).round(1)
+        = "#{projected_range} km"
+    %table
+      %th
+        Additional Comments
+      %td
         = @post.text
+
+
+
+    
+  ＃いらない
+  = high_chart("sample", @graph)
+
 
 .container
   .container__comments
@@ -39,7 +81,7 @@
             = form.text_area :text, class: "postComments__comment-box", placeholder: "コメントする", rows: "2" 
             = form.submit "SEND", class: "btn btn-primary btn-block"
       - else
-        %h3 ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+        %h3 ※※ You need to sign-in to comment to this post  ※※
 
     .userComments
       %h4

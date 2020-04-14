@@ -7,12 +7,12 @@
       %th
         WLTP
       %td
-        = "#{@car.WLTP_range}km"
+        = "#{@car.WLTP_range} km"
     %table
       %th
         EPA
       %td
-        = "#{@car.EPA_range}km"
+        = "#{@car.EPA_range} km"
     - @posts.each do |post| 
       %table
         %th
@@ -20,7 +20,9 @@
           ’s
           %br Projected Range   
         %td
-          - estimated_range = (post.distance.to_f/post.consumption.to_f*100).round(1)
-          = link_to "#{estimated_range}km", post_path(post)
+          - projected_range = (post.distance.to_f/post.consumption.to_f*100).round(1)
+          = link_to "#{projected_range} km", post_path(post)
+  = high_chart("chart-1", @graph_data)
+    
           
     

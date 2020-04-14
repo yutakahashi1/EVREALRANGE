@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_11_054810) do
+ActiveRecord::Schema.define(version: 2020_04_14_082143) do
 
   create_table "carmakers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "maker", null: false
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 2020_04_11_054810) do
     t.bigint "user_id"
     t.bigint "carmaker_id"
     t.bigint "car_id"
+    t.string "AC"
+    t.integer "AC_temperature"
     t.index ["car_id"], name: "index_posts_on_car_id"
     t.index ["carmaker_id"], name: "index_posts_on_carmaker_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
