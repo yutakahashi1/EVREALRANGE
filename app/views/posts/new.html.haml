@@ -20,12 +20,20 @@
     .form-inline
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectWeather"} Weather Condition
     = f.select :weather, [["sunny"],["rainy"],["snowy"]], {include_blank: "Choose the weather..."},{id: "inlineFormCustomSelectCondition", class: "custom-select mr-sm-2"}
-
     
 
     .form-inline
       = f.number_field :temperature, class: "form-control", placeholder: "Temperature(℃)"
       
+    %form
+    .form-inline
+    %label.my-1.mr-2{:for =>"inlineFormCustomSelectWeather"} Air Conditioner
+    = f.select :AC, [["Don't use"],["cooling"],["heating"]], {include_blank: "Use the AC or not"},{id: "inlineFormCustomSelectCondition", class: "custom-select mr-sm-2"}
+
+    .form-inline
+      = f.number_field :AC_temperature, class: "form-control", placeholder: "AC-Temperature(℃)"
+
+
     %form
     .form-inline
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectStatus"} Driving Status
@@ -48,19 +56,19 @@
       = f.number_field :consumption, class: "form-control", placeholder: "Battery consumption..."
     
     %form
-    %label{:for => "exampleFormControlTextarea1"} Additional Comments
+    %label{:for => "exampleFormControlTextarea1"} Additional Comments ()
     = f.text_area :text, class: "form-control"
 
     %form
     .form-inline
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectMode"} Carmaker
-    = f.select :carmaker_id, Carmaker.all.map { |carmaker| [carmaker.maker, carmaker.id] }, {include_blank: "メーカー名"}, {class: "form-control"}
+    = f.select :carmaker_id, Carmaker.all.map { |carmaker| [carmaker.maker, carmaker.id] }, {selected: current_user.carmaker.id}, {class: "form-control"}
 
     %form
     .form-inline
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectMode"} Car Type
     .form_car-type
-      = f.select :car_id, Car.all.map { |car| [car.car_type, car.id] }, {prompt: "車種を選択"}, {class: "form-control"}
+      = f.select :car_id, Car.all.map { |car| [car.car_type, car.id] }, {selected: current_user.car.id}, {class: "form-control"}
     
     .actions
       = f.submit "submit", class: 'btn btn-success btn-block' 
