@@ -1,9 +1,14 @@
 .container
   .userTitle
     = "#{@user.nickname}’s Information"
+    = @average_range
+   
   .userEdit-btn
     - if user_signed_in? && current_user.id == @user.id
       = link_to "Edit", edit_user_path(@user), class: "btn btn-success"
+  .userImage
+    - if @user.image?
+      = image_tag @user.image.url
   .userTable 
   
     %table
@@ -25,6 +30,6 @@
           = link_to "#{post.date}", post_path(post)
           s'
           %br Data
+  = paginate @posts
 
-
-    = high_chart("chart-1", @graph_data)
+  = high_chart("chart-1", @graph_data)

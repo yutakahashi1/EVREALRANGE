@@ -6,7 +6,7 @@ class CarmakersController < ApplicationController
 
   def show
     @carmaker = Carmaker.find(params[:id])
-    
+    @cars = @carmaker.cars
     @users = @carmaker.users
   end
 end

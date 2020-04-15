@@ -17,6 +17,12 @@
             = f.label :email
           .field-input
             = f.email_field :email
+        .field
+          .field-label
+            = f.label :image
+          .field-input
+            = f.file_field :image
+
         .actions
           = f.submit "Update", class: 'btn btn-success'
           = link_to "Destroy", user_path(@user.id), class: "btn btn-warning", method: :delete

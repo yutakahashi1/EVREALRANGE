@@ -22,16 +22,6 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:user)
     
     
-    category = User.pluck(:nickname)
-    categories = []
-    categories << category
-    current_quantity = Post.pluck(:distance)
-
-    @graph = LazyHighCharts::HighChart.new('graph') do |f|
-      f.title(text: '車種別航続可能距離、分布図的行ければ')
-      f.xAxis(categories: category)
-      f.series(name: '在庫数', data: current_quantity, type: "column")
-    end
     
 
   end

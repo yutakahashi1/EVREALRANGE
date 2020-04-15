@@ -1,28 +1,36 @@
 .container
+  = @car.car_type
+  
   .container_car
-    = @car.car_type
-  = image_tag "#{@car.image}", class: "cars-image"
+    
+    .container_car_car
+      
+    = image_tag "#{@car.image}", class: "cars-image"
   .carsTable 
     %table
       %th
-        WLTP
+        WLTP Range
       %td
-        = "#{@car.WLTP_range} km"
+        = "#{@car.WLTP_range.round(0)} km"
     %table
       %th
-        EPA
+        EPA Range
       %td
-        = "#{@car.EPA_range} km"
+        = "#{@car.EPA_range.round(0)} km"
     - @posts.each do |post| 
       %table
         %th
-          = "#{post.user.nickname}"
-          ’s
-          %br Projected Range   
+          .table-nickname
+            = "#{post.user.nickname}"
+            ’s
+            %br
+          .table-range
+            Projected Range   
         %td
           - projected_range = (post.distance.to_f/post.consumption.to_f*100).round(1)
           = link_to "#{projected_range} km", post_path(post)
   = high_chart("chart-1", @graph_data)
+  
     
           
     

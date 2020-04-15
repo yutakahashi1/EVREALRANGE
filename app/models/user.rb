@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :comments
   belongs_to :carmaker
   belongs_to :car
+
+  mount_uploader :image, 
+  ImageUploader
+
 end

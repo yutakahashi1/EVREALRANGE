@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_14_082143) do
+ActiveRecord::Schema.define(version: 2020_04_15_082756) do
 
   create_table "carmakers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "maker", null: false
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 2020_04_14_082143) do
     t.string "nickname"
     t.bigint "carmaker_id"
     t.bigint "car_id"
+    t.string "image"
     t.index ["car_id"], name: "index_users_on_car_id"
     t.index ["carmaker_id"], name: "index_users_on_carmaker_id"
     t.index ["email"], name: "index_users_on_email", unique: true
