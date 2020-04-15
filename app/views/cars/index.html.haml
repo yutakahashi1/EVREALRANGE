@@ -4,15 +4,15 @@
       = car.car_type
   
   estimated_ranges = (post.distance.to_f/post.consumption.to_f*100).round(1)
-    @estimated_range1 = []
-    @estimated_range1 << estimated_ranges
+  @estimated_range1 = []
+  @estimated_range1 << estimated_ranges
 
-    @postcars = Post.where(distance: params[:distance])
-    
-    @postcar = []
-    @postcar << @postcars
+  @postcars = Post.where(distance: params[:distance])
+  
+  @postcar = []
+  @postcar << @postcars
 
 
-    projected range を配列に入れたい
+  projected range を配列に入れたい
   
   

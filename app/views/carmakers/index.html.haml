@@ -1,4 +1,4 @@
 .container
   - @carmakers.each do |carmaker|
     .carmaker__index
-      = link_to carmaker.maker, "#"
+      = link_to carmaker.maker, carmaker_path(carmaker)

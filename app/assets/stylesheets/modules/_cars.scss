@@ -1,3 +1,29 @@
+
+.container_car {
+  position: relative;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+  width: 100%;
+  
+}
+.container_car::after{
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  -moz-box-shadow: inset 0px 0px 15px 15px rgb(230, 235, 226);
+  -webkit-box-shadow: inset 0px 0px 15px 15px rgb(230, 235, 226);
+  box-shadow: inset 0px 0px 15px 15px rgb(230, 235, 226);
+  content: " ";
+}
+
 .cars-image {
   width: 100%;
+  
+}
+
+
+
+
+.table-nickname {
+  color: rgb(62, 22, 240);
 }

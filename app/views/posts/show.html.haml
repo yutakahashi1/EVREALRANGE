@@ -47,7 +47,6 @@
         %br
         (Consumption)
       %td 
-
         = "#{@post.distance} km"
         %br
         = "(#{@post.consumption} %)"
@@ -63,13 +62,6 @@
       %td
         = @post.text
 
-
-
-    
-  ＃いらない
-  = high_chart("sample", @graph)
-
-
 .container
   .container__comments
     .postComments
@@ -78,7 +70,7 @@
           = "<Comments to #{@post.user.nickname}'s Data>"
         = form_with(model: [@post, @comment], local: true) do |form|
           .input-box
-            = form.text_area :text, class: "postComments__comment-box", placeholder: "コメントする", rows: "2" 
+            = form.text_area :text, class: "postComments__comment-box", placeholder: "comment here...", rows: "3" 
             = form.submit "SEND", class: "btn btn-primary btn-block"
       - else
         %h3 ※※ You need to sign-in to comment to this post  ※※

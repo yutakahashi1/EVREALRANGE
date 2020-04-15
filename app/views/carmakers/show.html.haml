@@ -1,2 +1,3 @@
 .container
-  Company Index
+  - @cars.each do |car|
+    = link_to car.car_type, car_path(car)

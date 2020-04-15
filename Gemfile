@@ -73,3 +73,9 @@ gem 'devise'
 gem'lazy_high_charts'
 
 gem "chartkick"
+
+gem "carrierwave"
+
+gem 'rmagick'
+
+gem 'kaminari'
