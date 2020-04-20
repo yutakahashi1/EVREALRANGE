@@ -1,3 +1,19 @@
+
+
 .container
+  .row.row-cols-1.row-cols-md-1
   - @cars.each do |car|
-    = link_to car.car_type, car_path(car)
+    .col-md-3
+      .card
+        = image_tag "#{car.image}", class: "card-img-top", size: '320x400'
+        .card-body.text-white.bg-dark
+          %h5.card-title
+            = link_to car.car_type, car_path(car)
+          %p.card-text 
+            = "#{car.EPA_range.round(0)} km"
+        .card-footer.text-white.bg-dark
+          %small.text-muted Last updated 3 mins ago
+
+  
+ 
+  

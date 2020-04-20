@@ -1,7 +1,7 @@
 = form_with model: @post, local: true do |f|
   .container
     .post-form__title
-      RePost Data about your trip!
+      RePost Driving Data
     %form
       %label.my-1.mr-2{:for =>"inlineFormCustomSelectDate"} Date (Year Month Day)
       .form-inline1
@@ -62,4 +62,11 @@
     
     .form__manage
       = f.submit "Update", class: 'btn btn-success'
-      = link_to "Delete", post_path(@post.id), class: "btn btn-warning", method: :delete
+      = link_to "Delete", post_path(@post.id), class: "btn btn-warning", method: :delete, data:{ confirm: 'Are you sure to delete?',cancel: 'Cancel',commit: 'Delete'}, title: 'Delete Confirmation'
+
+  
+  
+          
+          
+          
+    

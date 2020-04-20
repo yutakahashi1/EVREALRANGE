@@ -2,6 +2,8 @@ class CarmakersController < ApplicationController
   def index
     @carmakers = Carmaker.all
     
+    @cars = Car.all
+    
   end
 
   def show

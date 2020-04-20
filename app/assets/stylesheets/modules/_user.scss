@@ -130,6 +130,52 @@ table td{
   background-color: #363636;
   padding: 10px 0;
   color: white;
-  border-bottom: black 1px solid;
+  border-bottom: #363636 1px solid;
 }
 
+.userEdit-btn {
+  float: right;
+}
+
+.userPagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.pagination>li>a {          
+  border: none;     /*枠線をなくす*/
+  color: white;   /*文字の色を変える*/
+  background-color: #363636;
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {     
+  background-color: white;     /*背景の色を変える*/
+  //border-radius: 15px;     /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {        
+  //border-radius: 15px;    /*角を丸くする*/
+  background-color: white;
+}
+
+
+.userImage {
+  position: relative;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+  width: 100%;
+  
+}
+.userImage::after{
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  -moz-box-shadow: inset 0px 0px 15px 15px rgb(230, 235, 226);
+  -webkit-box-shadow: inset 0px 0px 15px 15px rgb(230, 235, 226);
+  box-shadow: inset 0px 0px 15px 15px rgb(230, 235, 226);
+  content: " ";
+}

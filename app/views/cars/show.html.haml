@@ -1,5 +1,6 @@
 .container
   = @car.car_type
+  = @average_range
   
   .container_car
     
@@ -29,6 +30,9 @@
         %td
           - projected_range = (post.distance.to_f/post.consumption.to_f*100).round(1)
           = link_to "#{projected_range} km", post_path(post)
+    .userPagination
+      = paginate @posts
+
   = high_chart("chart-1", @graph_data)
   
     

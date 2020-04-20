@@ -2,9 +2,9 @@
   .account-page__inner.clearfix
     .account-page__inner--left.account-page__header
       %h2 Edit Account
-      %h5 アカウントの編集
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
-      = link_to "トップページに戻る", root_path, class: 'btn'
+      
+      = link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-light'
+      = link_to "Top Page", root_path, class: 'btn btn-light'
     .account-page__inner--right.user-form
       = form_for(current_user) do |f|
         .field
@@ -25,4 +25,4 @@
 
         .actions
           = f.submit "Update", class: 'btn btn-success'
-          = link_to "Destroy", user_path(@user.id), class: "btn btn-warning", method: :delete
+          = link_to "Destroy", user_path(@user.id), class: "btn btn-warning", method: :delete, data:{ confirm: 'Are you sure to delete?', cancel: 'Cancel', commit: 'Delete'}, title: 'Delete Confirmation'

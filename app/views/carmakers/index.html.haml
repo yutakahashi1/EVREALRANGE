@@ -1,4 +1,12 @@
 .container
+  .row.row-cols-1.row-cols-md-1
   - @carmakers.each do |carmaker|
-    .carmaker__index
-      = link_to carmaker.maker, carmaker_path(carmaker)
+    .col-md-3
+      .card
+        = image_tag "#{carmaker.image}", class: "card-img-top", size: '320x400'
+        .card-body.text-white.bg-dark
+          %h5.card-title
+            = link_to carmaker.maker, carmaker_path(carmaker)
+          %p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+        .card-footer.text-white.bg-dark
+          %small.text-muted Last updated 3 mins ago

@@ -8,21 +8,41 @@
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   
-%body
-  .d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.mb-3.bg-white.border-bottom.shadow-sm
-    %h1.my-0.mr-md-auto.font-weight-normal EV REAL RANGE
-    %nav.my-2.my-md-0.mr-md-3
-      %a.p-2.text-dark{:href => "#"} Features
-      %a.p-2.text-dark{:href => "#"} Enterprise
-      %a.p-2.text-dark{:href => "#"} Support
-      %a.p-2.text-dark{:href => "#"} Pricing
-    - if user_signed_in?
-      = link_to current_user.nickname, user_path(current_user), class: "header__right--btn"
-      = link_to "New Post", new_post_path, class: "btn.btn-outline-primary" 
-      = link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn.btn-outline-primary" 
-    - else
-      = link_to "Log In", new_user_session_path, class: "btn.btn-outline-primary"
-      = link_to "Sign Up", new_user_registration_path, class: "btn.btn-outline-primary"
-  %p.notice= notice
-  %p.alert= alert
-  = yield
+  %body
+    %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+      %h1.navbar-brand{:href => "#"} EV REAL RANGE
+      %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavDropdown", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbarNavDropdown.collapse.navbar-collapse
+        - if user_signed_in?
+          %ul.navbar-nav
+            %li.nav-item.active
+              = link_to "Home", carmakers_path, class: "nav-link"
+              
+              %span.sr-only (current)
+            %li.nav-item
+              = link_to "#{current_user.nickname}'s Page", user_path(current_user), class: "nav-link"
+            %li.nav-item
+              = link_to "New Post", new_post_path, class: "nav-link"
+            %li.nav-item
+              = link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link"
+            %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              Dropdown 後で修正
+            .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+              %a.dropdown-item{:href => "#"} Action
+              %a.dropdown-item{:href => "#"} Another action
+              %a.dropdown-item{:href => "#"} Something else here
+        - else
+          %ul.navbar-nav
+            %li.nav-item.active
+              = link_to "Home", carmakers_path, class: "nav-link"
+            %li.nav-item
+              = link_to "Log In", new_user_session_path, class: "nav-link"
+            %li.nav-item
+              = link_to "Sign Up", new_user_registration_path, class: "nav-link"
+
+
+    %p.notice= notice
+    %p.alert= alert
+    .body 
+      = yield

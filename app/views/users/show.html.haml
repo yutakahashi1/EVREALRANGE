@@ -22,14 +22,15 @@
         Your Car
       %td
         = @user.car.car_type
-    - @posts.each do |post| 
+    - @posts.each_with_index do |post, i| 
       %table
         %th
-          Data
+          = "Data"
         %td
           = link_to "#{post.date}", post_path(post)
           s'
           %br Data
-  = paginate @posts
+  .userPagination
+    = paginate @posts
 
   = high_chart("chart-1", @graph_data)
