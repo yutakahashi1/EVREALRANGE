@@ -21,7 +21,7 @@
           .field
             .field-label
               = f.label :password
-              %i (英数字8文字以上)
+              %i (minimum 8 characters)
             .field-input
               = f.password_field :password, autocomplete: "off"
           .field
@@ -34,13 +34,13 @@
             .field-label
               = f.label :carmaker_id
             .field-input
-              = f.select :carmaker_id, Carmaker.all.map { |carmaker| [carmaker.maker, carmaker.id] }, {prompt: "メーカーを選択"}, {class: "form-control"}
+              = f.select :carmaker_id, Carmaker.all.map { |carmaker| [carmaker.maker, carmaker.id] }, {prompt: "Choose Your Carmaker..."}, {class: "form-control"}
 
           .field
             .field-label
               = f.label :car_id
             .field-input
-              = f.select :car_id, Car.all.map { |car| [car.car_type, car.id] }, {prompt: "車種を選択"}, {class: "form-control"}
+              = f.select :car_id, Car.all.map { |car| [car.car_type, car.id] }, {prompt: "Choose Your Cartype..."}, {class: "form-control"}
 
           .actions
             = f.submit "Create Account", class: 'btn btn-primary'

@@ -13,19 +13,23 @@
   font-weight: bold;
 }
 
+
 .post-form__title {
-  margin-bottom: 10px;
-  text-align: center;
-  font-size: 35px;
-  
-  position: relative;
-  padding: 0.2em 0.5em;
-  background: -webkit-linear-gradient(to right, rgb(53, 238, 93), #6beb7c);
-  background: linear-gradient(to right, rgb(43, 243, 53), #63ce6c);
-  color: white;
-  font-weight: bolder;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.56);
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+  font-size: 40px;
+  font-weight: 200;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100px;
+    margin-top: 5px;
+    border-bottom: 1px solid #38aef0;
+  }
 }
+
+
 
 form {
   padding-top: 10px;

@@ -79,3 +79,7 @@ gem "carrierwave"
 gem 'rmagick'
 
 gem 'kaminari'
+
+gem 'data-confirm-modal'
+
+gem 'rails-i18n'
