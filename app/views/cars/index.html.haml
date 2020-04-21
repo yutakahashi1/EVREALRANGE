@@ -1,5 +1,23 @@
-.container
-  - @cars.each do |car|
-    .car__index  
-      = link_to car.car_type, car_path(car)
 
+#carouselExampleFade.carousel.slide.carousel-fade{"data-ride" => "carousel", style: "width: 100%"}
+  .carousel-inner
+    .carousel-item.active
+      
+      = image_tag "/assets/Tesla-Model-S-X-3-hero.jpg", class: "d-block.w-100"
+    .carousel-item
+      
+      = image_tag "/assets/UNADJUSTEDNONRAW_thumb_15c3.jpg", class: "d-block.w-100"
+    .carousel-item
+      
+      = image_tag "/assets/imagesてsぁ.jpeg", class: "d-block.w-100"
+      
+  %a.carousel-control-prev{"data-slide" => "prev", :href => "#carouselExampleFade", :role => "button"}
+    %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+    %span.sr-only Previous
+  %a.carousel-control-next{"data-slide" => "next", :href => "#carouselExampleFade", :role => "button"}
+    %span.carousel-control-next-icon{"aria-hidden" => "true"}
+    %span.sr-only Next
+.container
+- @cars.each do |car|
+  .car__index
+    = link_to car.car_type, car_path(car)

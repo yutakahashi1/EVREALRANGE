@@ -12,10 +12,11 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+
 //= require_tree .
 
 //= require jquery
+//= require jquery_ujs
 //= require bootstrap-sprockets
 
 //= require highcharts/highcharts
@@ -26,3 +27,12 @@
 //= require Chart.bundle
 
 //= require data-confirm-modal
+
+
+$(function() {
+  $('.carousel-inner').slick({
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+  });
+});
