@@ -1,6 +1,6 @@
 .container
   = @car.car_type
-  = @average_range
+  
   
   .container_car
     
@@ -8,6 +8,13 @@
       
     = image_tag "#{@car.image}", class: "cars-image"
   .carsTable 
+    %table
+      %th
+        Average Range
+      %td
+        %br
+          = "#{@average_range} km"
+        %br
     %table
       %th
         WLTP Range

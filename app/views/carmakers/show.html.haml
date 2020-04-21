@@ -5,7 +5,7 @@
   - @cars.each do |car|
     .col-md-3
       .card
-        = image_tag "#{car.image}", class: "card-img-top", size: '320x400'
+        = image_tag "#{car.image}", class: "card-img-top"
         .card-body.text-white.bg-dark
           %h5.card-title
             = link_to car.car_type, car_path(car)
