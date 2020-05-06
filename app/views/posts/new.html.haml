@@ -27,11 +27,11 @@
       
     %form
     .form-inline
-    %label.my-1.mr-2{:for =>"inlineFormCustomSelectWeather"} Air Conditioner
-    = f.select :AC, [["Don't use"],["cooling"],["heating"]], {include_blank: "Use the AC or not"},{id: "inlineFormCustomSelectCondition", class: "custom-select mr-sm-2"}
+    %label.my-1.mr-2{:for =>"inlineFormCustomSelectWeather"} Air Conditioning
+    = f.select :AC, [["Don't use"],["cooling"],["heating"]], {include_blank: "Use the AC ??"},{id: "inlineFormCustomSelectCondition", class: "custom-select mr-sm-2"}
 
     .form-inline
-      = f.number_field :AC_temperature, class: "form-control", placeholder: "AC-Temperature(℃)"
+      = f.number_field :AC_temperature, class: "form-control", placeholder: "AC-temperature(℃)"
 
 
     %form

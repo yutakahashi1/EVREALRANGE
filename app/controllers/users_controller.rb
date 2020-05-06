@@ -2,32 +2,31 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.page(params[:page]).per(5)
-    @postusers = @user.posts
+    @userposts = @user.posts
     @projected_ranges = []
-    @postusers.each do |post|
-      @projected_range = (post.distance.to_f/post.consumption.to_f*100).round(1)
-      @projected_ranges << @projected_range 
-      
+    @postdates = []
+    @userposts.each do |post|
+      projected_range = (post.distance.to_f/post.consumption.to_f*100).round(1)
+      @projected_ranges << projected_range 
+      @postdate = post.date
+      @postdates << @postdate
     end
+    @usercarEPA = []
+    usercar = @user.car.EPA_range
     tickInterval = 1
-    @average_range = (@projected_ranges.sum / @projected_ranges.length).round(1)
+    average_range = (@projected_ranges.sum / @projected_ranges.length).round(1)
     @average_ranges = []
-    @average_ranges << @average_range
-    @average_ranges << @average_range
-    @average_ranges << @average_range
-    @average_ranges << @average_range
-    @average_ranges << @average_range
+    @userposts.count.times do
+      @usercarEPA << usercar
+      @average_ranges << average_range
+    end
     @graph_data = LazyHighCharts::HighChart.new('graph') do |f|
-      f.title(text: '航続可能距離　いけたら日付をX軸')
-      f.xAxis(categories: "", tickInterval: tickInterval)
+      f.title(text: "#{@user.nickname}'s Projected Range Data'")
+      f.xAxis(categories: @postdates, tickInterval: tickInterval, class: "graph_xAxis")
       f.series(name: "#{@user.nickname}'s Projected Range", data: @projected_ranges, type: 'spline')
       f.series(name: "#{@user.nickname}'s Average Range", data: @average_ranges, type: 'line')
+      f.series(name: "#{@user.car.car_type}'s EPA Range", data: @usercarEPA, type: 'line')
     end
-
-
-      
-      
-  
   end
 
   def edit

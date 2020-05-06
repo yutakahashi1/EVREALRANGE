@@ -29,10 +29,3 @@
 //= require data-confirm-modal
 
 
-$(function() {
-  $('.carousel-inner').slick({
-      dots: true,
-      autoplay: true,
-      autoplaySpeed: 5000,
-  });
-});
