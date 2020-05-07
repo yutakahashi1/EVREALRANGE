@@ -11,10 +11,7 @@
     %form
     .form-inline
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectWeather"} image
-    = f.select :AC, [["Don't use"],["cooling"],["heating"]], {include_blank: "Use the AC ??"},{id: "inlineFormCustomSelectCondition", class: "custom-select mr-sm-2"}
-
-    .form-inline
-      = f.number_field :AC_temperature, class: "form-control", placeholder: "AC-temperature(℃)"
+    = f.file_field :image
     
     %form
     %label{:for => "exampleFormControlTextarea1"} explanation
