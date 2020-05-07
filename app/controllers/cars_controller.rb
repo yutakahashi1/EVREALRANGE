@@ -38,6 +38,7 @@ class CarsController < ApplicationController
   end
 
   def create
+    
     car = Car.create(car_params)
     redirect_to car_path(car)
   end
@@ -60,7 +61,7 @@ class CarsController < ApplicationController
 
   private
   def car_params
-    params.require(:car).permit(:car_type, :image, :WLTP_range, :EPA_range)
+    params.require(:car).permit(:car_type, :image, :WLTP_range, :EPA_range, :carmaker_id)
   end
 
 
