@@ -1,0 +1,40 @@
+= form_with model: @car, local: true do |f|
+  .container
+    .post-form__title
+      Car Data
+    
+
+    %form
+    .form-inline
+    %label.my-1.mr-2{:for =>"inlineFormCustomSelectWeather"} car type
+    .form-inline
+      = f.text_field :car_type, class: "form-control", placeholder: "Car Type"
+      
+    %form
+    .form-inline
+    %label.my-1.mr-2{:for =>"inlineFormCustomSelectWeather"} image
+    = f.select :AC, [["Don't use"],["cooling"],["heating"]], {include_blank: "Use the AC ??"},{id: "inlineFormCustomSelectCondition", class: "custom-select mr-sm-2"}
+
+    .form-inline
+      = f.number_field :AC_temperature, class: "form-control", placeholder: "AC-temperature(℃)"
+
+
+    
+
+    %form
+    %label.my-1.mr-2{:for =>"inlineFormCustomSelectDistance"} WLTP Range
+    .form-inline
+      = f.number_field :WLTP_range, class: "form-control", placeholder: "wltp"
+
+    %form
+    %label.my-1.mr-2{:for =>"inlineFormCustomSelectConsumption"} EPA Range
+    .form-inline
+      = f.number_field :EPA_range, class: "form-control", placeholder: "epa"
+    
+    %form
+    %label{:for => "exampleFormControlTextarea1"} explanation あとでカラム追加
+    = f.text_area :text, class: "form-control"
+    
+    .actions
+      = f.submit "update", class: 'btn btn-success btn-block' 
+      = link_to "Delete", root_path, class: "btn btn-warning btn-block", method: :delete, data:{ confirm: 'Are you sure to delete?',cancel: 'Cancel',commit: 'Delete'}, title: 'Delete Confirmation'
