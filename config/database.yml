@@ -51,4 +51,5 @@ production:
   <<: *default
   database: EV_production
   username: root
-  password: <%= ENV['EV_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
