@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
   resources :users, only: [:show, :edit, :update, :destroy]
-  resources :carmakers, only: [:index, :show]
-  resources :cars, only: [:index, :show]
+  resources :carmakers 
+  resources :cars
 end

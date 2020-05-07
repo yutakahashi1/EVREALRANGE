@@ -1,0 +1,24 @@
+= form_with model: @carmaker, local: true do |f|
+  .container
+    .post-form__title
+      Carmaker Data
+    %form
+    .form-inline
+    %label.my-1.mr-2{:for =>"inlineFormCustomSelectWeather"} carmaker
+    .form-inline
+      = f.text_field :maker, class: "form-control", placeholder: "Carmaker"
+      
+    %form
+    .form-inline
+    %label.my-1.mr-2{:for =>"inlineFormCustomSelectWeather"} image
+    = f.select :AC, [["Don't use"],["cooling"],["heating"]], {include_blank: "Use the AC ??"},{id: "inlineFormCustomSelectCondition", class: "custom-select mr-sm-2"}
+
+    .form-inline
+      = f.number_field :AC_temperature, class: "form-control", placeholder: "AC-temperature(℃)"
+    
+    %form
+    %label{:for => "exampleFormControlTextarea1"} explanation
+    = f.text_area :explanation, class: "form-control"
+    
+    .actions
+      = f.submit "submit", class: 'btn btn-success btn-block' 
