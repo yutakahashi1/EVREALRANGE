@@ -1,7 +1,12 @@
 class CarmakersController < ApplicationController
   def index
     @carmakers = Carmaker.all
-    @cars = Car.all
+    @carmakers.each do |carmaker|
+      @car = carmaker.cars.last
+      #@latest_car = @cars.order(created_at: :asc).first
+    end
+    
+
   end
 
   def show
