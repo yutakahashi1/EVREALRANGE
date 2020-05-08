@@ -20,8 +20,11 @@
     %form
     .form-inline
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectMode"} Carmaker
-    = f.select :carmaker_id, Carmaker.all.map { |carmaker| [carmaker.maker, carmaker.id] }, {selected: current_user.carmaker.id}, {class: "form-control"}
     
+    
+   
+    //=f.select :carmaker_id, Carmaker.all.map { |carmaker| [carmaker.maker, carmaker.id] }, {selected: current_user.carmaker.id}, {class: "form-control"}
+  
 
     %form
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectDistance"} WLTP Range
