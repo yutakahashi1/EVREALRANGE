@@ -94,3 +94,5 @@ gem 'kaminari'
 gem 'data-confirm-modal'
 
 gem 'rails-i18n'
+
+gem 'fog-aws'
