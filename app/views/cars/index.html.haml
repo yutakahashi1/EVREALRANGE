@@ -1,13 +1,23 @@
 .swiper-container
   .swiper-wrapper
     .swiper-slide 
-      = image_tag "nissan_top_image.jpg", class: "swiper-class1"
+      //= image_tag "nissan_top_image.jpg", class: "swiper-class1"
+      //%img{:src => "/assets/nissan_top_image.jpg", class: "swiper-class1"}
+      %img{:src => "#{asset_path "nissan_top_image.jpg"}", class: "swiper-class1"}
+      
+
     .swiper-slide
-      = image_tag "Tesla-Family-Crop-1920px.jpg", class: "swiper-class1"
+      //= image_tag "Tesla-Family-Crop-1920px.jpg", class: "swiper-class1"
+      //%img{:src => "/assets/Tesla-Family-Crop-1920px.jpg", class: "swiper-class1"}
+      %img{:src => "#{asset_path "Tesla-Family-Crop-1920px.jpg"}", class: "swiper-class1"}
     .swiper-slide 
-      = image_tag "porsche.image", class: "swiper-class1"
+      //= image_tag "porsche.image", class: "swiper-class1"
+      //%img{:src => "/assets/porsche.image", class: "swiper-class1"}
+      %img{:src => "#{asset_path "porsche.image"}", class: "swiper-class1"}
     .swiper-slide 
-      = image_tag "Tesla-Model-S-X-3-hero.jpg", class: "swiper-class1"
+      //= image_tag "Tesla-Model-S-X-3-hero.jpg", class: "swiper-class1"
+      //%img{:src => "/assets/pTesla-Model-S-X-3-hero.jpg", class: "swiper-class1"}
+      %img{:src => "#{asset_path "Tesla-Model-S-X-3-hero.jpg"}", class: "swiper-class1"}
     
     
   .swiper-button-prev
