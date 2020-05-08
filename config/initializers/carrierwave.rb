@@ -14,8 +14,9 @@ CarrierWave.configure do |config|
       aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
       region: 'ap-northeast-1'
     }
-  end
+  
 
   config.fog_directory  = 'federeryuukun1'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/federeryuukun1'
+end
 end
