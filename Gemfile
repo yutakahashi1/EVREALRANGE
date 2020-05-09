@@ -96,3 +96,5 @@ gem 'data-confirm-modal'
 gem 'rails-i18n'
 
 gem 'fog-aws'
+
+gem 'mini_magick'
