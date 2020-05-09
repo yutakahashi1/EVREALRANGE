@@ -16,7 +16,7 @@ CarrierWave.configure do |config|
     }
   
 
-  config.fog_directory  = 'federeryuukun1'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/federeryuukun1'
-end
+    config.fog_directory  = 'federeryuukun1'
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/federeryuukun1'
+  end
 end
