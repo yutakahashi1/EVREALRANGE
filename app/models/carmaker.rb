@@ -3,4 +3,6 @@ class Carmaker < ApplicationRecord
   has_many :users
   has_many :cars
   mount_uploader :image, ImageUploader
+
+  
 end

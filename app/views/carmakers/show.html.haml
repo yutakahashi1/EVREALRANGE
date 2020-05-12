@@ -1,19 +1,29 @@
-
-
 .container
   .row.row-cols-1.row-cols-md-1
   - @cars.each do |car|
+  
     .col-md-3
       .card
         = image_tag "#{car.image}", class: "card-img-top"
         .card-body.text-white.bg-dark
           %h5.card-title
-            = link_to car.car_type, car_path(car)
+            = link_to car.car_type, car_path(car), class: "card-title-title"
           %p.card-text 
             = "#{car.EPA_range.round(0)} km"
         .card-footer.text-white.bg-dark
-          %small.text-muted Last updated 3 mins ago
+          %p.card-createdat
+            = "new data info"
+            .card-createdat__new-car
+            
+           
+              .card-createdat__new-car__car
+                = "#{car.users.order("users.created_at desc").first&.nickname}" 
+                
+              .card-createdat__new-car__date
+                = "added at #{car.posts.order("posts.created_at desc").first&.created_at&.strftime('%Y/%m/%d')}"
+              
+              
 
+    
   
- 
-  
+    

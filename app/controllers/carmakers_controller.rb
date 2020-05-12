@@ -1,18 +1,16 @@
 class CarmakersController < ApplicationController
   def index
-    @carmakers = Carmaker.all
-    @carmakers.each do |carmaker|
-      @car = carmaker.cars.last
-      #@latest_car = @cars.order(created_at: :asc).first
-    end
-    
-
+    @carmakers = Carmaker.includes(:cars)
   end
 
   def show
     @carmaker = Carmaker.find(params[:id])
     @cars = @carmaker.cars
-    @users = @carmaker.users
+    @post = []
+    @cars.each do |car|
+      @post << car.posts.first
+    end
+  
   end
 
   def new
