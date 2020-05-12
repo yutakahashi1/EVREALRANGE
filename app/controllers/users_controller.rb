@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @projected_ranges = []
     @postdates = []
     @userposts.each do |post|
-      projected_range = (post.distance.to_f/post.consumption.to_f*100).round(1)
+      projected_range = (post.distance.to_f/post.consumption.to_f*100).round(1) rescue 0
       @projected_ranges << projected_range 
       @postdate = post.date
       @postdates << @postdate
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @usercarEPA = []
     usercar = @user.car.EPA_range
     tickInterval = 1
-    average_range = (@projected_ranges.sum / @projected_ranges.length).round(1)
+    average_range = (@projected_ranges.sum / @projected_ranges.length).round(1) rescue 0
     @average_ranges = []
     @userposts.count.times do
       @usercarEPA << usercar

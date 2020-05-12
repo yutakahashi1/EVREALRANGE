@@ -2,7 +2,7 @@ class CarsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :move_to_index_except_admin, except: [:index, :show]
   def index
-    @cars = Car.all
+    @cars = Car.includes(:posts)
   end
   
   def show
