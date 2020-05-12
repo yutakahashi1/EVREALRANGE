@@ -2,7 +2,8 @@
   = @car.car_type
   .container_car
     .container_car_car
-    = image_tag "#{@car.image}", class: "cars-image"
+    - if @car.image.attached?
+      = image_tag "#{@car.thumbnail}", class: "cars-image"
   .carsTable 
     %table
       %th
