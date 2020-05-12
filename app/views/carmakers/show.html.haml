@@ -9,18 +9,32 @@
           %h5.card-title
             = link_to car.car_type, car_path(car), class: "card-title-title"
           %p.card-text 
-            = "#{car.EPA_range.round(0)} km"
-        .card-footer.text-white.bg-dark
-          %p.card-createdat
-            = "latest data info"
-            .card-createdat__new-car
+            - car.posts.each do |post|
+              - projected_ranges = []
+              - average_ranges =[]
+              - distance1 = post.distance
+              - consumption1 = post.consumption
+              - projected_range1 = (distance1.to_f/consumption1.to_f*100)
+              - projected_ranges << projected_range1
+              - average_range = (projected_ranges.sum / projected_ranges.length).round(1) 
+              - average_ranges << average_range 
+              - average = (average_ranges.sum / average_ranges.length).round(1) 
+              //= average
             
            
-              .card-createdat__new-car__car
-                = "#{car.users.order("users.created_at desc").first&.nickname}" 
-                
-              .card-createdat__new-car__date
-                = "added at #{car.posts.order("posts.created_at desc").first&.created_at&.strftime('%Y/%m/%d')}"
+        .card-footer.text-white.bg-dark
+          %p.card-createdat
+            = "Latest Data Info"
+            .card-createdat__new-car
+              - distance = car.posts.order("posts.created_at desc").first&.distance
+              - consumption = car.posts.order("posts.created_at desc").first&.consumption
+              - projected_range = (distance.to_f/consumption.to_f*100).round(1)
+              - if projected_range.nan?
+                = "No Data Yet"
+              - else
+                = "#{projected_range} km by #{car.users.order("users.created_at desc").first&.nickname}"
+                .card-createdat__new-car__date
+                  = "added at #{car.posts.order("posts.created_at desc").first&.created_at&.strftime('%Y/%m/%d')}"
               
               
 

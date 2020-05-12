@@ -8,7 +8,7 @@ class CarsController < ApplicationController
   def show
     @car = Car.find(params[:id])
     @carposts = @car.posts
-    @posts = @car.posts.page(params[:page]).per(5)
+    @posts = @car.posts.order("posts.created_at desc")&.page(params[:page]).per(5)
     @projected_ranges = []
     @postdates = []
     @carposts.each do |post|

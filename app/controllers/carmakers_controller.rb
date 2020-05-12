@@ -10,7 +10,7 @@ class CarmakersController < ApplicationController
     @cars = @carmaker.cars
     @post = []
     @cars.each do |car|
-      @post << car.posts.first
+      @posts = car.posts
     end
   
   end
