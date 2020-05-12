@@ -24,6 +24,7 @@
 }
 
 .card {
+  
   //display: flex;
   
   //width: 50%;
@@ -34,14 +35,31 @@
 }
   
 .card-title-title { 
-  color: white;
+  color: aqua;
   text-decoration: none;
 }
 
 p.card-text {
-  color: cornflowerblue;
+  color: white;
+  font-size: 14px;
 }
 
 p.card-createdat {
-  color: cornflowerblue;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+.card-createdat__new-car {
+  color: aqua;
+  font-size: 19px;
+  font-weight: bold;
+  //display: flex;
+  //justify-content: space-between;
+}
+
+.card-createdat__new-car__date {
+  float: right;
+  font-size: 14px;
+  font-weight: lighter;
 }

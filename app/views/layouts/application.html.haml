@@ -15,28 +15,24 @@
   
   %body
     %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-      %h1.navbar-brand{:href => "#"} EV REAL RANGE
+      = link_to cars_path, class: "EV_title" do
+        %h1.navbar-brand EV REAL RANGE 
       %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavDropdown", "data-toggle" => "collapse", :type => "button"}
         %span.navbar-toggler-icon
       #navbarNavDropdown.collapse.navbar-collapse
         - if user_signed_in?
           %ul.navbar-nav
             %li.nav-item.active
-              = link_to "Home", carmakers_path, class: "nav-link"
-              
-              %span.sr-only (current)
+              = link_to "Home", cars_path, class: "nav-link"
             %li.nav-item
-              = link_to "#{current_user.nickname}'s Page", user_path(current_user), class: "nav-link"
+              = link_to "Your Page [ #{current_user.nickname} ]", user_path(current_user), class: "nav-link"
+            %li.nav-item
+              = link_to "Your Car Page [ #{current_user.car.car_type} ]", car_path(current_user.car_id), class: "nav-link"
             %li.nav-item
               = link_to "New Post", new_post_path, class: "nav-link"
             %li.nav-item
               = link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link"
-            %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-              Dropdown 後で修正
-            .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
-              %a.dropdown-item{:href => "#"} Action
-              %a.dropdown-item{:href => "#"} Another action
-              %a.dropdown-item{:href => "#"} Something else here
+            
         - else
           %ul.navbar-nav
             %li.nav-item.active

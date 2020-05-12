@@ -11,5 +11,19 @@
             = carmaker.explanation
         .card-footer.text-white.bg-dark
           %p.card-createdat
-            = @car.car_type 
-            = "was added at #{carmaker.created_at.strftime('%Y/%m/%d')}"
+            = "new car info"
+            .card-createdat__new-car
+              .card-createdat__new-car__car
+                = "#{carmaker.cars.order("cars.created_at desc").first&.car_type}"  
+              .card-createdat__new-car__date
+                = "added at #{carmaker.cars.order("cars.created_at desc").first&.created_at&.strftime('%Y/%m/%d')}"
+              
+          
+              
+              
+            
+           
+          
+
+            
+           

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   devise_for :users
-  root to: "posts#index"
+  root to: "carss#index"
   resources :posts, except: :index do
     resources :comments, only: [:create, :destroy]
   end
