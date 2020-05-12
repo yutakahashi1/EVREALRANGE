@@ -9,18 +9,23 @@
         Average Range
       %td
         %br
+        .carsTable__average-range
           = "#{@average_range} km"
         %br
     %table
       %th
         WLTP Range
       %td
-        = "#{@car.WLTP_range.round(0)} km"
+        %br
+        .carsTable__average-range
+          = "#{@car.WLTP_range.round(0)} km"
     %table
       %th
         EPA Range
       %td
-        = "#{@car.EPA_range.round(0)} km"
+        %br
+        .carsTable__average-range
+          = "#{@car.EPA_range.round(0)} km"
     - @posts.each do |post| 
       %table
         %th
