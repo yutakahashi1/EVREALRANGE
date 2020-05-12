@@ -11,7 +11,7 @@
             = carmaker.explanation
         .card-footer.text-white.bg-dark
           %p.card-createdat
-            = "new car info"
+            = "latest car info"
             .card-createdat__new-car
               .card-createdat__new-car__car
                 = "#{carmaker.cars.order("cars.created_at desc").first&.car_type}"  

@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :ensure_correct_user, except: [:index, :show, :new, :create]
   
   def index
     @posts = Post.includes(:user)
@@ -20,10 +21,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
-    
-    
-    
-
   end
 
   def edit
@@ -48,6 +45,13 @@ class PostsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to cars_path unless user_signed_in? 
+    redirect_to root_path
+  end
+
+  def ensure_correct_user
+    post = Post.find_by(id: params[:id])
+    if post.user_id != current_user.id
+      redirect_to root_path
+    end
   end
 end
