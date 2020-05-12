@@ -1,4 +1,6 @@
 class CarsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :move_to_index_except_admin, except: [:index, :show]
   def index
     @cars = Car.all
   end
@@ -65,5 +67,8 @@ class CarsController < ApplicationController
     params.require(:car).permit(:car_type, :image, :WLTP_range, :EPA_range, :carmaker_id)
   end
 
+  def move_to_index_except_admin
+    redirect_to action: :index unless current_user.admin?
+  end
 
 end

@@ -1,4 +1,6 @@
 class CarmakersController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :move_to_index_except_admin, except: [:index, :show]
   def index
     @carmakers = Carmaker.includes(:cars)
   end
@@ -41,5 +43,9 @@ class CarmakersController < ApplicationController
   private
   def carmaker_params
     params.require(:carmaker).permit(:maker, :image, :explanation)
+  end
+
+  def move_to_index_except_admin
+    redirect_to action: :index unless current_user.admin?
   end
 end
