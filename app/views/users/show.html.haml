@@ -15,13 +15,17 @@
       %th
         Nickname
       %td
-        = @user.nickname
+        %br
+        .carsTable__average-range
+          = @user.nickname
 
     %table
       %th
         Your Car
       %td
-        = @user.car.car_type
+        %br
+        .carsTable__average-range
+          = link_to "#{@user.car.car_type}", car_path(@user.car)
     - @posts.each_with_index do |post, i| 
       %table
         %th

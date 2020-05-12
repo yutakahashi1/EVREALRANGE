@@ -19,7 +19,7 @@ class CarmakersController < ApplicationController
 
   def create
     carmaker = Carmaker.create(carmaker_params)
-    redirect_to carmaker_path(carmaker)
+    redirect_to carmakers_path
   end
 
   def edit
@@ -29,7 +29,7 @@ class CarmakersController < ApplicationController
   def update
     carmaker = Carmaker.find(params[:id])
     carmaker.update(carmaker_params)
-    redirect_to carmaker_path(carmaker)
+    redirect_to carmakers_path
   end
 
   def destroy
