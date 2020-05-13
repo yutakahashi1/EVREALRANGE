@@ -19,7 +19,7 @@
 
 p.toppage-image0__text {
   position: absolute;
-  top: 50%;
+  top: 75%;
   left: 50%;
   -ms-transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
@@ -28,7 +28,8 @@ p.toppage-image0__text {
   padding:0;
   //z-index: 2;
   color: white;
-  font-size: 40px;
+  font-size: 30px;
+  text-align: center;
 }
 
 .body1 {
