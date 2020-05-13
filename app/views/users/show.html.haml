@@ -1,38 +1,39 @@
-.container
-  .container_top
-    .container_car_title
-      = "#{@user.nickname}’s Page"
-    .container_car
-      .container_car_car
-      - if @user.image.present?
-        = image_tag @user.image_url, class: "cars-image"
-  .userEdit-btn
-    - if user_signed_in? && current_user.id == @user.id
-      = link_to "Edit", edit_user_path(@user), class: "btn btn-success btn-block"
-  .userTable 
-    %table
-      %th
-        Nickname
-      %td
-        %br
-        .carsTable__average-range
-          = @user.nickname
-    %table
-      %th
-        Your Car
-      %td
-        %br
-        .carsTable__average-range
-          = link_to "#{@user.car.car_type}", car_path(@user.car)
-    - @posts.each_with_index do |post, i| 
+.wrapper.user
+  .container
+    .container_top
+      .container_car_title
+        = "#{@user.nickname}’s Page"
+      .container_car
+        .container_car_car
+        - if @user.image.present?
+          = image_tag @user.image_url, class: "cars-image"
+    .userEdit-btn
+      - if user_signed_in? && current_user.id == @user.id
+        = link_to "Edit", edit_user_path(@user), class: "btn btn-success btn-block"
+    .userTable 
       %table
         %th
-          = "Data"
+          Nickname
         %td
-          = link_to "#{post.date}", post_path(post)
-          s'
-          %br Data
-  .userPagination
-    = paginate @posts
+          %br
+          .carsTable__average-range
+            = @user.nickname
+      %table
+        %th
+          Your Car
+        %td
+          %br
+          .carsTable__average-range
+            = link_to "#{@user.car.car_type}", car_path(@user.car)
+      - @posts.each_with_index do |post, i| 
+        %table
+          %th
+            = "Data"
+          %td
+            = link_to "#{post.date}", post_path(post)
+            s'
+            %br Data
+    .userPagination
+      = paginate @posts
 
-  = high_chart("chart-1", @graph_data)
+    = high_chart("chart-1", @graph_data)

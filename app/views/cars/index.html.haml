@@ -1,29 +1,27 @@
-.swiper-container
-  .swiper-wrapper
-    .swiper-slide 
-      //= image_tag "nissan_top_image.jpg", class: "swiper-class1"
-      //%img{:src => "/assets/nissan_top_image.jpg", class: "swiper-class1"}
-      %img{:src => "#{asset_path "nissan_top_image.jpg"}", class: "swiper-class1"}
-      
+.body0
+  = image_tag "eu-environment.jpg", class: "toppage-image0"
+  %p.toppage-image0__text
+    = "aaa"
 
-    .swiper-slide
-      //= image_tag "Tesla-Family-Crop-1920px.jpg", class: "swiper-class1"
-      //%img{:src => "/assets/Tesla-Family-Crop-1920px.jpg", class: "swiper-class1"}
-      %img{:src => "#{asset_path "Tesla-Family-Crop-1920px.jpg"}", class: "swiper-class1"}
-    .swiper-slide 
-      //= image_tag "porsche.image", class: "swiper-class1"
-      //%img{:src => "/assets/porsche.image", class: "swiper-class1"}
-      %img{:src => "#{asset_path "porsche.image.jpg"}", class: "swiper-class1"}
-    .swiper-slide 
-      //= image_tag "Tesla-Model-S-X-3-hero.jpg", class: "swiper-class1"
-      //%img{:src => "/assets/pTesla-Model-S-X-3-hero.jpg", class: "swiper-class1"}
-      %img{:src => "#{asset_path "Tesla-Model-S-X-3-hero.jpg"}", class: "swiper-class1"}
-    
-    
-  .swiper-button-prev
-  .swiper-button-next
-  .swiper-pagination
-%script{:src => "https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"}
+.body1
+  .swiper-container
+    .swiper-wrapper
+      .swiper-slide 
+        = image_tag "nissan_top_image.jpg", class: "swiper-class1"
+      .swiper-slide
+        = image_tag "Tesla-Family-Crop-1920px.jpg", class: "swiper-class1"
+      .swiper-slide 
+        = image_tag "porsche.image", class: "swiper-class1"
+      .swiper-slide 
+        = image_tag "Tesla-Model-S-X-3-hero.jpg", class: "swiper-class1"
+      
+    .swiper-button-prev
+    .swiper-button-next
+    .swiper-pagination
+  %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"}
+
+
+  
 
 
 :javascript

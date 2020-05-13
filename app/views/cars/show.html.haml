@@ -1,52 +1,53 @@
-.container
-  .container_top
-    .container_car_title
-      = @car.car_type
+.wrapper.car
+  .container
+    .container_top
+      .container_car_title
+        = @car.car_type
+          
+      .container_car
+        .container_car_car
+          = image_tag @car.image_url, class: "cars-image"
         
-    .container_car
-      .container_car_car
-        = image_tag @car.image_url, class: "cars-image"
-      
-  .carsTable 
-    %table
-      %th
-        Average Range
-      %td
-        %br
-        .carsTable__average-range
-          = "#{@average_range} km"
-        %br
-    %table
-      %th
-        WLTP Range
-      %td
-        %br
-        .carsTable__average-range
-          = "#{@car.WLTP_range.round(0)} km"
-    %table
-      %th
-        EPA Range
-      %td
-        %br
-        .carsTable__average-range
-          = "#{@car.EPA_range.round(0)} km"
-    - @posts.each do |post| 
+    .carsTable 
       %table
         %th
-          .table-nickname
-            = "#{post.user.nickname}"
-            ’s
-            %br
-          .table-range
-            Projected Range   
+          Average Range
         %td
-          - projected_range = (post.distance.to_f/post.consumption.to_f*100).round(1)
-          = link_to "#{projected_range} km", post_path(post)
-    .userPagination
-      = paginate @posts
+          %br
+          .carsTable__average-range
+            = "#{@average_range} km"
+          %br
+      %table
+        %th
+          WLTP Range
+        %td
+          %br
+          .carsTable__average-range
+            = "#{@car.WLTP_range.round(0)} km"
+      %table
+        %th
+          EPA Range
+        %td
+          %br
+          .carsTable__average-range
+            = "#{@car.EPA_range.round(0)} km"
+      - @posts.each do |post| 
+        %table
+          %th
+            .table-nickname
+              = "#{post.user.nickname}"
+              ’s
+              %br
+            .table-range
+              Projected Range   
+          %td
+            - projected_range = (post.distance.to_f/post.consumption.to_f*100).round(1)
+            = link_to "#{projected_range} km", post_path(post)
+      .userPagination
+        = paginate @posts
 
-  = high_chart("chart-1", @graph_data)
-  
+    = high_chart("chart-1", @graph_data)
     
-          
-    
+      
+            
+      
