@@ -1,5 +1,24 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+.wrapper.user {
+  background: #0bd url(image_case2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 200vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-blend-mode: darken;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  //background: rgba(255,255,255,0.5);
+}
+
+.container_car_title {
+  color: white;
+}
+
 .login-page {
   width: 600px;
   height: 700px;
