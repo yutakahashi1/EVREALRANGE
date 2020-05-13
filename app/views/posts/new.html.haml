@@ -62,13 +62,13 @@
     %form
     .form-inline
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectMode"} Carmaker
-    = f.select :carmaker_id, Carmaker.all.map { |carmaker| [carmaker.maker, carmaker.id] }, {selected: current_user.carmaker.id}, {class: "form-control"}
+    = f.select :carmaker_id, Carmaker.all.map { |carmaker| [carmaker.maker, carmaker.id] }, {selected: current_user.carmaker.id}, {class: "form-control", disabled: true}
 
     %form
     .form-inline
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectMode"} Car Type
     .form_car-type
-      = f.select :car_id, Car.all.map { |car| [car.car_type, car.id] }, {selected: current_user.car.id}, {class: "form-control"}
+      = f.select :car_id, Car.all.map { |car| [car.car_type, car.id] }, {selected: current_user.car.id}, {class: "form-control", disabled: true}
     
     .actions
       = f.submit "submit", class: 'btn btn-success btn-block' 

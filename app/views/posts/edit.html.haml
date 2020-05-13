@@ -7,7 +7,7 @@
       %label.my-1.mr-2{:for =>"inlineFormCustomSelectDate"} Date (Year Month Day)
       .form-inline1
       
-        = f.date_field :date, class: "form-inline", placeholder: "Date"
+        = f.date_field :date, class: "form-inline", placeholder: "Date", disabled: true
       
         
       .form-row
@@ -53,13 +53,13 @@
     %form
     .form-inline
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectMode"} Carmaker
-    = f.select :carmaker_id, Carmaker.all.map { |carmaker| [carmaker.maker, carmaker.id] }, {prompt: "メーカーを選択"}, {class: "form-control"}
+    = f.select :carmaker_id, Carmaker.all.map { |carmaker| [carmaker.maker, carmaker.id] }, {prompt: "メーカーを選択"}, {class: "form-control", disabled: true}
 
     %form
     .form-inline
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectMode"} Car Type
     .form_car-type
-      = f.select :car_id, Car.all.map { |car| [car.car_type, car.id] }, {prompt: "車種を選択"}, {class: "form-control"}
+      = f.select :car_id, Car.all.map { |car| [car.car_type, car.id] }, {prompt: "車種を選択"}, {class: "form-control", disabled: true}
     
     .form__manage
       = f.submit "Update", class: 'btn btn-success'
