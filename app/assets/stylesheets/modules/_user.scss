@@ -1,7 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .wrapper.user {
-  background: #0bd url(image_case2.jpg);
+  background-image: image-url("image_case2.jpg");
+  background-color: #0bd;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 200vh;
