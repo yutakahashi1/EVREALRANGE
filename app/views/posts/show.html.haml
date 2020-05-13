@@ -1,7 +1,7 @@
 .container
   .container__show
     .container1__show
-      = link_to "#{@post.user.nickname}", user_path(@post.user), class: "posts_show_nickname"
+      = link_to "#{@post.user.nickname}'s Data", user_path(@post.user), class: "posts_show_nickname"
     -if user_signed_in? && @post.user.id == current_user.id?
       .container1_edit-btn
         = link_to "Edit", edit_post_path(@post.id), class: "btn btn-success"
@@ -9,8 +9,10 @@
     %table
       %th
         Car Type
+      
       %td
-        = link_to "#{@post.car.car_type}", car_path(@post.car)
+        %br
+          = link_to "#{@post.car.car_type}", car_path(@post.car), class: "car-data__car-type"
     %table
       %th
         Date
@@ -53,9 +55,10 @@
     %table
       %th
         Projected Range
-      %td
-        - projected_range = (@post.distance.to_f/@post.consumption.to_f*100).round(1)
-        = "#{projected_range} km"
+      %td.post-data
+        %br
+          - projected_range = (@post.distance.to_f/@post.consumption.to_f*100).round(1)
+          = "#{projected_range} km"
     %table
       %th
         Additional Comments

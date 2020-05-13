@@ -1,16 +1,15 @@
 .container
-  .userTitle
-    = "#{@user.nickname}’s Information"
-    = @average_range
-   
+  .container_top
+    .container_car_title
+      = "#{@user.nickname}’s Page"
+    .container_car
+      .container_car_car
+      - if @user.image.present?
+        = image_tag @user.image_url, class: "cars-image"
   .userEdit-btn
     - if user_signed_in? && current_user.id == @user.id
-      = link_to "Edit", edit_user_path(@user), class: "btn btn-success"
-  .userImage
-    - if @user.image?
-      = image_tag @user.image.url
+      = link_to "Edit", edit_user_path(@user), class: "btn btn-success btn-block"
   .userTable 
-  
     %table
       %th
         Nickname
@@ -18,7 +17,6 @@
         %br
         .carsTable__average-range
           = @user.nickname
-
     %table
       %th
         Your Car
