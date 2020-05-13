@@ -1,6 +1,7 @@
 
 .wrapper.car {
-  background: #0bd url(case_ogp_001.jpg);
+  background: image-url("case_ogp_001.jpg");
+  background-color: #0bd;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 200vh;
