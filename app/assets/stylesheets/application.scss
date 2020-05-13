@@ -16,9 +16,16 @@
 
 
 body {
-  //background-color: rgb(230, 235, 226);
+  background: image-url("wind-power.jpg");
+  background-color: #4edaf3;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 200px;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-blend-mode: darken;
 }
-
 
 
 
