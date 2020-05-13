@@ -1,9 +1,21 @@
+.container_top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.container_car_title {
+  font-size: 35px;
+  //width: 35%;
+}
+
 .container_car {
   position: relative;
   display: inline-block;
   font-size: 0;
   line-height: 0;
-  width: 100%;
+  width: 65%;
 }
 .container_car::after{
   position: absolute;
@@ -13,9 +25,10 @@
   box-shadow: inset 0px 0px 15px 15px rgb(230, 235, 226);
   content: " ";
 }
+
 .cars-image {
-  width: 100%;
   
+ 
 }
 
 

@@ -24,7 +24,7 @@ class UsersController < ApplicationController
       @average_ranges << average_range
     end
     @graph_data = LazyHighCharts::HighChart.new('graph') do |f|
-      f.title(text: "#{@user.nickname}'s Projected Range Data'")
+      f.title(text: "#{@user.nickname}'s Projected Range Data")
       f.xAxis(categories: @postdates, tickInterval: tickInterval, class: "graph_xAxis")
       f.series(name: "#{@user.nickname}'s Projected Range", data: @projected_ranges, type: 'spline')
       f.series(name: "#{@user.nickname}'s Average Range", data: @average_ranges, type: 'line')

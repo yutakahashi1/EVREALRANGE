@@ -4,7 +4,5 @@ class Car < ApplicationRecord
   has_many :posts
   mount_uploader :image, ImageUploader
 
-  def thumbnail
-    return self.image.variant(resize: '50x50')
-  end
+  
 end
