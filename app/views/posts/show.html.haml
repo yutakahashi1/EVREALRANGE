@@ -1,95 +1,95 @@
-.container
-  .container__show
-    .container1__show
-      = link_to "#{@post.user.nickname}'s Data", user_path(@post.user), class: "posts_show_nickname"
-    -if user_signed_in? && @post.user.id == current_user.id?
-      .container1_edit-btn
-        = link_to "Edit", edit_post_path(@post.id), class: "btn btn-success"
-    
-    %table
-      %th
-        Car Type
+.wrapper.post
+  .container
+    .container__show
+      .container1__show
+        = link_to "#{@post.user.nickname}'s Data", user_path(@post.user), class: "posts_show_nickname"
+      -if user_signed_in? && @post.user.id == current_user.id?
+        .container1_edit-btn
+          = link_to "Edit", edit_post_path(@post.id), class: "btn btn-success"
       
-      %td
-        %br
-          = link_to "#{@post.car.car_type}", car_path(@post.car), class: "car-data__car-type"
-    %table
-      %th
-        Date
-      %td
-        = @post.date
-    %table
-      %th
-        Weather Condition
-      %td
-        = @post.weather
-    %table
-      %th
-        Outside Temperature
-      %td
-        = "#{@post.temperature}℃"
-    %table
-      %th
-        Air Conditioner
-      %td
-        = "#{@post.AC} / #{@post.AC_temperature}℃"
-    %table
-      %th
-        Status
-      %td
-        = @post.driving_status
-    %table
-      %th
-        Mode
-      %td
-        = @post.driving_mode
-    %table
-      %th
-        Driving Distance
-        %br
-        (Consumption)
-      %td 
-        = "#{@post.distance} km"
-        %br
-        = "(#{@post.consumption} %)"
-    %table
-      %th
-        Projected Range
-      %td.post-data
-        %br
-          - projected_range = (@post.distance.to_f/@post.consumption.to_f*100).round(1)
-          = "#{projected_range} km"
-    %table
-      %th
-        Additional Comments
-      %td
-        = @post.text
+      %table
+        %th
+          Car Type
+        
+        %td
+          %br
+            = link_to "#{@post.car.car_type}", car_path(@post.car), class: "car-data__car-type"
+      %table
+        %th
+          Date
+        %td
+          = @post.date
+      %table
+        %th
+          Weather Condition
+        %td
+          = @post.weather
+      %table
+        %th
+          Outside Temperature
+        %td
+          = "#{@post.temperature}℃"
+      %table
+        %th
+          Air Conditioner
+        %td
+          = "#{@post.AC} / #{@post.AC_temperature}℃"
+      %table
+        %th
+          Status
+        %td
+          = @post.driving_status
+      %table
+        %th
+          Mode
+        %td
+          = @post.driving_mode
+      %table
+        %th
+          Driving Distance
+          %br
+          (Consumption)
+        %td 
+          = "#{@post.distance} km"
+          %br
+          = "(#{@post.consumption} %)"
+      %table
+        %th
+          Projected Range
+        %td.post-data
+          %br
+            - projected_range = (@post.distance.to_f/@post.consumption.to_f*100).round(1)
+            = "#{projected_range} km"
+      %table
+        %th
+          Additional Comments
+        %td
+          = @post.text
 
-.container
-  .container__comments
-    .postComments
-      - if current_user
-        %h3 
-          = "<Comments to #{@post.user.nickname}'s Data>"
-        = form_with(model: [@post, @comment], local: true) do |form|
-          .input-box
-            = form.text_area :text, class: "postComments__comment-box", placeholder: "comment here...", rows: "3" 
-            = form.submit "SEND", class: "btn btn-primary btn-block"
-      - else
-        %h3 ※※ You need to sign-in to comment to this post  ※※
+    .container__comments
+      .postComments
+        - if current_user
+          %h3 
+            = "<Comments to #{@post.user.nickname}'s Data>"
+          = form_with(model: [@post, @comment], local: true) do |form|
+            .input-box
+              = form.text_area :text, class: "postComments__comment-box", placeholder: "comment here...", rows: "3" 
+              = form.submit "SEND", class: "btn btn-primary btn-block"
+        - else
+          %h3 ※※ You need to sign-in to comment to this post  ※※
 
-    .userComments
-      %h4
-        = "<Comments>"
-      - if @comments
-        - @comments.each do |comment|
-          .userComments__comment
-            .userComments__comment-info
-              = link_to comment.user.nickname, "/users/#{comment.user_id}", class: "userComments__nickname"
-              .userComments__created-at
-                = comment.created_at 
-                - if comment.user == current_user
-                  = link_to "Delete", post_comment_path(comment.post_id, comment.id), class: "btn btn-warning", method: :delete
-            .userComments__text
-              = comment.text
-            
+      .userComments
+        %h4
+          = "<Comments>"
+        - if @comments
+          - @comments.each do |comment|
+            .userComments__comment
+              .userComments__comment-info
+                = link_to comment.user.nickname, "/users/#{comment.user_id}", class: "userComments__nickname"
+                .userComments__created-at
+                  = comment.created_at 
+                  - if comment.user == current_user
+                    = link_to "Delete", post_comment_path(comment.post_id, comment.id), class: "btn btn-warning", method: :delete
+              .userComments__text
+                = comment.text
+              

@@ -1,10 +1,14 @@
 .body0
   = image_tag "eu-environment.jpg", class: "toppage-image0"
-  %p.toppage-image0__text
-    = "Thank you for accelerating the world’s transition to sustainable energy."
-  .toppage-exp
-    .toppage-exp__viewer
-    .toppage-exp__user
+  .toppage-image0__text
+    = "Thank you for accelerating the world’s transition to sustainable future."
+    %br
+      = "You are..."
+    .toppage-exp
+      .toppage-exp__viewer
+        = link_to "interested in EV", root_path(anchor: "body2"), class: "toppage-exp__viewer__viewer"
+      .toppage-exp__user
+        = link_to "EV owner", root_path(anchor: "body3"), class: "toppage-exp__user__user"
 
 .body1
   .swiper-container
@@ -24,8 +28,31 @@
   %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"}
 
 
-.body2
-  
+#body2.body2
+  = image_tag "environmental-protection_kv.jpg", class: "toppage-image2"
+  .toppage-image2__text
+    = "You can check the real range of all Electric Vehicles in the world."
+    .toppage-exp2
+      .toppage-exp__viewer
+        = link_to "Check EV Real Range", carmakers_path, class: "toppage-exp__viewer__viewer2"
+      
+
+#body3.body3
+  = image_tag "23093824281_o.jpg", class: "toppage-image3"
+  .toppage-image3__text
+    = "You can share the Real Range of your EV to contribute the sustainable world."
+    - if user_signed_in?
+      .toppage-exp
+        .toppage-exp__viewer
+          = link_to "Share Real Range", new_post_path, class: "toppage-exp__viewer__viewer"
+        .toppage-exp__user
+          = link_to "Your Page", user_path(current_user), class: "toppage-exp__user__user"
+    - else
+      .toppage-exp
+        .toppage-exp__viewer
+          = link_to "Check Real Range", carmakers_path, class: "toppage-exp__viewer__viewer"
+        .toppage-exp__user
+          = link_to "Sign up", new_user_registration_path, class: "toppage-exp__user__user"
 
 
 :javascript

@@ -2,9 +2,21 @@
   box-sizing: border-box;
 }
 
+.wrapper.post {
+  background-image: image-url("global-warming.jpg");
+  background-color: #0bd;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 200vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-blend-mode: screen;
+}
+
 
 .container {
-  padding-bottom: 10px;
+  //padding-bottom: 10px;
+  display: table;;
 }
 
 .container__show {

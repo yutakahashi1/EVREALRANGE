@@ -6,7 +6,7 @@
       .container_car
         .container_car_car
         - if @user.image.present?
-          = image_tag @user.image_url, class: "cars-image"
+          = image_tag @user.image_url(:thumb), class: "cars-image"
     .userEdit-btn
       - if user_signed_in? && current_user.id == @user.id
         = link_to "Edit", edit_user_path(@user), class: "btn btn-success btn-block"
