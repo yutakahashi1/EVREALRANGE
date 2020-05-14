@@ -4,7 +4,7 @@
   
     .col-md-3
       .card
-        = image_tag "#{car.image.url(:thumb)}", class: "card-img-top"
+        = image_tag car.image_url, class: "card-img-top"
         .card-body.text-white.bg-dark
           %h5.card-title
             = link_to car.car_type, car_path(car), class: "card-title-title"
