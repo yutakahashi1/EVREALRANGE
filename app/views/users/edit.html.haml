@@ -1,28 +1,30 @@
-#account-page.account-page
-  .account-page__inner.clearfix
-    .account-page__inner--left.account-page__header
-      %h2 Edit Account
-      
-      = link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-light'
-      = link_to "Top Page", root_path, class: 'btn btn-light'
-    .account-page__inner--right.user-form
-      = form_for(current_user) do |f|
-        .field
-          .field-label
-            = f.label :nickname
-          .field-input
-            = f.text_field :nickname, autofocus: true
-        .field
-          .field-label
-            = f.label :email
-          .field-input
-            = f.email_field :email
-        .field
-          .field-label
-            = f.label :image
-          .field-input
-            = f.file_field :image
 
-        .actions
-          = f.submit "Update", class: 'btn btn-success'
-          = link_to "Destroy", user_path(@user.id), class: "btn btn-warning", method: :delete, data:{ confirm: 'Are you sure to delete?', cancel: 'Cancel', commit: 'Delete'}, title: 'Delete Confirmation'
+.container
+  #account-page.account-page
+    .account-page__inner.clearfix
+      .account-page__inner--left.account-page__header
+        %h2 Edit Account
+        
+        = link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-light'
+        = link_to "Top Page", root_path, class: 'btn btn-light'
+      .account-page__inner--right.user-form
+        = form_for(current_user) do |f|
+          .field
+            .field-label
+              = f.label :nickname
+            .field-input
+              = f.text_field :nickname, autofocus: true
+          .field
+            .field-label
+              = f.label :email
+            .field-input
+              = f.email_field :email
+          .field
+            .field-label
+              = f.label :image
+            .field-input
+              = f.file_field :image
+
+          .actions
+            = f.submit "Update", class: 'btn btn-success'
+            = link_to "Destroy", user_path(@user.id), class: "btn btn-warning", method: :delete, data:{ confirm: 'Are you sure to delete?', cancel: 'Cancel', commit: 'Delete'}, title: 'Delete Confirmation'
