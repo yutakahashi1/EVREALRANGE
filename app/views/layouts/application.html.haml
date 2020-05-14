@@ -25,6 +25,8 @@
             %li.nav-item
               = link_to "Your Car Page [ #{current_user.car.car_type} ]", car_path(current_user.car_id), class: "nav-link"
             %li.nav-item
+              = link_to "Your Carmaker Page [ #{current_user.carmaker.maker} ]", carmaker_path(current_user.carmaker_id), class: "nav-link"
+            %li.nav-item
               = link_to "New Post", new_post_path, class: "nav-link"
             %li.nav-item
               = link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link"
