@@ -11,9 +11,11 @@
 
 :white_check_mark:To accelerate the world’s transition to sustainable energy
 ## Basic Function
-:white_check_mark:Top-page view using anchor  
-:white_check_mark:aaa  
-[![demo](https://i.gyazo.com/6968d31672e9e1bffb3fe05464a74377.gif)](https://gyazo.com/6968d31672e9e1bffb3fe05464a74377)
+:white_check_mark:Top-page view using anchor   
+![6968d31672e9e1bffb3fe05464a74377](https://user-images.githubusercontent.com/62327707/81954357-b7de5d00-9643-11ea-8a8d-6701a918a1a7.gif)  
+:white_check_mark:posting driving data  
+:white_check_mark:
+
 
 
 ## :eyes: Highlight Feature
