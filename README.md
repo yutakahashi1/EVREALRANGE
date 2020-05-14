@@ -1,13 +1,26 @@
 # README
+# EV REAL RANGE
+# Summary
+## 🌐 App URL
+### **http://52.192.174.12/**  
 
-## アプリ名
+## 💬 Production Background
+:white_check_mark:More and more people want to buy Electric Vehicle because of the recent trend, however, they also have "range anxiety" due to misunderstanding some information in the internet.   
+
+:white_check_mark:To share the real range of current EV by EV users  
+
+:white_check_mark:To accelerate the world’s transition to sustainable energy
+
+:white_check_mark:
+### :chart_with_upwards_trend:
 
 
 
 
 
-# EV DB設計
-## usersテーブル
+
+# DB Design
+## users table
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false|
@@ -23,7 +36,7 @@
 - belongs_to :car
 - belongs_to :carmaker
 
-## postsテーブル
+## posts table
 |Column|Type|Options|
 |------|----|-------|
 |date|date|null: false|
@@ -46,7 +59,7 @@
 - belongs_to :car
 - belongs_to :carmaker
 
-## commentsテーブル
+## comments table
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
@@ -56,7 +69,7 @@
 - belongs_to :post
 - belongs_to :user
 
-## carsテーブル
+## cars table
 |Column|Type|Options|
 |------|----|-------|
 |car_type|string|null: false|
@@ -69,7 +82,7 @@
 - has_many :users
 - belongs_to :carmaker
 
-## carmakersテーブル
+## carmakers table
 |Column|Type|Options|
 |------|----|-------|
 |maker|string|null: false|
