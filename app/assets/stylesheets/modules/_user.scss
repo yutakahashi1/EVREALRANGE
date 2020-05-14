@@ -157,6 +157,44 @@ table td{
   border-bottom: #363636 1px solid;
 }
 
+th.EPA-range {
+  position: relative;
+}
+
+th.EPA-range:hover span.EPA-range {
+  display: inline;
+}
+
+span.EPA-range {
+  display: none;
+  position: absolute;
+  padding: 2px;
+  background-color: rgba(255,127,127,0.75);
+  width: 180px;
+  left: 30%;
+  top: 100%;
+  margin-top: 12px;
+  font-size: 80%;
+  z-index: 2;
+  animation: EPA-rangeAnime 1s linear;
+}
+
+span.EPA-range:after{
+  border-bottom: 12px solid rgba(255, 127, 127, 0.75);  /* 吹き出し口の高さ・色 */
+  border-left: 10px solid transparent;   /* 吹き出し口の幅１／２ */
+  border-right: 10px solid transparent;  /* 吹き出し口の幅１／２ */
+  top: -12px;                            /* 吹き出し口の位置調整 */
+  left : 5%;                         /* 吹き出し口の横位置 */
+  content: "";                       /* コンテンツの挿入 */
+  position: absolute;                /* 親要素を基準 */
+}
+@keyframes EPA-rangeAnime{
+ 100%{ color : black; background:rgba(255, 127, 127, 0.75) }
+  50%{ color : black; background:rgba(255, 127, 127, 0.25) }
+   0%{ color : white; background:white   }
+}
+
+
 .userEdit-btn {
   float: right;
 }
