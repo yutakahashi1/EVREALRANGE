@@ -10,23 +10,31 @@
         
     .carsTable 
       %table
-        %th
+        %th.EPA-range
           Average Range
+          %span.EPA-range
+            = "average-range means that the car on this page can travel from a full charge, based on actual EV users' experience."
         %td
           %br
           .carsTable__average-range
             = "#{@average_range} km"
           %br
       %table
-        %th
+        %th.EPA-range
           WLTP Range
+          %span.EPA-range
+            = "As the NEDC(New European Drive Cycle) was no longer an accurate representation of average driving behaviour, a new measure, the WLTP-range, was developed to provide uniform and more realistic test conditions worldwide. The WLTP was introduced on 1 September 2017."
         %td
           %br
           .carsTable__average-range
             = "#{@car.WLTP_range.round(0)} km"
       %table
-        %th
+        %th.EPA-range
           EPA Range
+          %span.EPA-range
+            = "The EPA's range is used as the advertised figure for electric vehicles that are sold in the US. It's an estimate of the number of miles the vehicle should be able to travel in combined city and highway driving from a full charge."
+            %br
+            = " We strongly recommend you to adopt EPA-range when you consider 'range anxiety'."
         %td
           %br
           .carsTable__average-range
