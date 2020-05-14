@@ -43,7 +43,7 @@ class CarsController < ApplicationController
   def create
     
     car = Car.create(car_params)
-    redirect_to car_path(car)
+    redirect_to root_path
   end
 
   def edit
