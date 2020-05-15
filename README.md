@@ -17,6 +17,8 @@
 #### :white_check_mark:User account function  
 #### :white_check_mark:Add explanation of technical jargon related to EV, using JavaScript  
 ![746edbaecd66b3ebc9e7f85afe9db6ae](https://user-images.githubusercontent.com/62327707/82011733-e1819d80-96b0-11ea-894c-9c3b6a4c7648.gif)
+#### :white_check_mark:Car type list with latest data information 
+![YH2mluzzQma7pniTb6cCog_thumb_15dd](https://user-images.githubusercontent.com/62327707/82015498-d717d180-96b9-11ea-85c5-fae8384dd893.jpg)
 
 
 
