@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.page(params[:page]).per(5)
+    @posts = @user.posts.order("posts.created_at desc")&.page(params[:page]).per(5)
     @userposts = @user.posts
     @projected_ranges = []
     @postdates = []

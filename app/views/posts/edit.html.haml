@@ -53,13 +53,13 @@
     %form
     .form-inline
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectMode"} Carmaker
-    = f.select :carmaker_id, Carmaker.all.map { |carmaker| [carmaker.maker, carmaker.id] }, {prompt: "メーカーを選択"}, {class: "form-control", disabled: true}
+    = f.select :carmaker_id, Carmaker.all.map { |carmaker| [carmaker.maker, carmaker.id] }, {prompt: "メーカーを選択"}, {class: "form-control", style: "pointer-events: none;", tabindex: "-1"}
 
     %form
     .form-inline
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectMode"} Car Type
     .form_car-type
-      = f.select :car_id, Car.all.map { |car| [car.car_type, car.id] }, {prompt: "車種を選択"}, {class: "form-control", disabled: true}
+      = f.select :car_id, Car.all.map { |car| [car.car_type, car.id] }, {prompt: "車種を選択"}, {class: "form-control", style: "pointer-events: none;", tabindex: "-1"}
     
     .form__manage
       = f.submit "Update", class: 'btn btn-success'

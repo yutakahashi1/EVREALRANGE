@@ -49,6 +49,7 @@ p.card-createdat {
   color: white;
   text-align: center;
   font-size: 14px;
+  font-weight: lighter;
 }
 
 .card-createdat__new-car {
@@ -63,4 +64,11 @@ p.card-createdat {
   float: right;
   font-size: 14px;
   font-weight: lighter;
+  color: white;
+}
+
+.card-createdat__new-car__title {
+  color: aqua;
+  font-size: 18px;
+  font-weight: bolder;
 }
