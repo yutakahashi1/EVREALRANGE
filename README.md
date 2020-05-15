@@ -15,8 +15,7 @@
 ![6968d31672e9e1bffb3fe05464a74377](https://user-images.githubusercontent.com/62327707/81954357-b7de5d00-9643-11ea-8a8d-6701a918a1a7.gif)  
 #### :white_check_mark:Posting driving data  
 #### :white_check_mark:User account function  
-#### :white_check_mark:
-  
+#### :white_check_mark:Add explanation of technical jargon related to EV, using JavaScript  
 ![746edbaecd66b3ebc9e7f85afe9db6ae](https://user-images.githubusercontent.com/62327707/82011733-e1819d80-96b0-11ea-894c-9c3b6a4c7648.gif)
 
 
