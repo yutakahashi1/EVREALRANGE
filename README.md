@@ -69,7 +69,7 @@
   <br>
 
 # DB Design
-## users table
+## Users table
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false|
@@ -85,7 +85,7 @@
 - belongs_to :car
 - belongs_to :carmaker
 
-## posts table
+## Posts table
 |Column|Type|Options|
 |------|----|-------|
 |date|date|null: false|
@@ -108,7 +108,7 @@
 - belongs_to :car
 - belongs_to :carmaker
 
-## comments table
+## Comments table
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
@@ -118,7 +118,7 @@
 - belongs_to :post
 - belongs_to :user
 
-## cars table
+## Cars table
 |Column|Type|Options|
 |------|----|-------|
 |car_type|string|null: false|
@@ -131,7 +131,7 @@
 - has_many :users
 - belongs_to :carmaker
 
-## carmakers table
+## Carmakers table
 |Column|Type|Options|
 |------|----|-------|
 |maker|string|null: false|
