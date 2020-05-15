@@ -1,5 +1,6 @@
-# README
-# EV REAL RANGE
+
+<h1 align="center">- EV REAL RANGE -</h1>  
+
 # Summary
 ## 🌐 App URL
 ### **http://52.192.174.12/**  
@@ -10,7 +11,7 @@
 :white_check_mark:To share the real range of current EV by EV users. 
 
 :white_check_mark:To accelerate the world’s transition to sustainable energy.
-## :package:Basic Function
+## :package: Basic Function
 #### :white_check_mark:Top-page view using anchor   
 ![6968d31672e9e1bffb3fe05464a74377](https://user-images.githubusercontent.com/62327707/81954357-b7de5d00-9643-11ea-8a8d-6701a918a1a7.gif)  
 #### :white_check_mark:Posting driving data  
