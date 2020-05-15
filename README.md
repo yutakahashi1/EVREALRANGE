@@ -5,7 +5,7 @@
 ### **http://52.192.174.12/**  
 
 ## 💬 Production Background
-:white_check_mark:More and more people want to buy Electric Vehicle because of the recent trend, however, they also have "range anxiety" due to misunderstanding some information they saw in the internet.   
+:white_check_mark:More and more people want to buy Electric Vehicle because of the recent trend, however, they also have "range anxiety" due to misunderstanding some information they saw in the internet or even from the maker.   
 
 :white_check_mark:To share the real range of current EV by EV users  
 
@@ -13,8 +13,12 @@
 ## Basic Function
 #### :white_check_mark:Top-page view using anchor   
 ![6968d31672e9e1bffb3fe05464a74377](https://user-images.githubusercontent.com/62327707/81954357-b7de5d00-9643-11ea-8a8d-6701a918a1a7.gif)  
-#### :white_check_mark:posting driving data  
+#### :white_check_mark:Posting driving data  
+#### :white_check_mark:User account function  
 #### :white_check_mark:
+  
+![746edbaecd66b3ebc9e7f85afe9db6ae](https://user-images.githubusercontent.com/62327707/82011733-e1819d80-96b0-11ea-894c-9c3b6a4c7648.gif)
+
 
 
 
