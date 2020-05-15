@@ -7,9 +7,9 @@
 ## 💬 Production Background
 :white_check_mark:More and more people want to buy Electric Vehicle because of the recent trend, however, they also have "range anxiety" due to misunderstanding some information they saw in the internet or even from the maker.   
 
-:white_check_mark:To share the real range of current EV by EV users  
+:white_check_mark:To share the real range of current EV by EV users. 
 
-:white_check_mark:To accelerate the world’s transition to sustainable energy
+:white_check_mark:To accelerate the world’s transition to sustainable energy.
 ## Basic Function
 #### :white_check_mark:Top-page view using anchor   
 ![6968d31672e9e1bffb3fe05464a74377](https://user-images.githubusercontent.com/62327707/81954357-b7de5d00-9643-11ea-8a8d-6701a918a1a7.gif)  
@@ -22,12 +22,12 @@
 
 
 ## :eyes: Highlight Feature
-### :chart_with_upwards_trend:  
+### :chart_with_upwards_trend:Install graphs to be able to understand visually
 ![](https://i.gyazo.com/fada092134f85827b36415bba0072e09.png)  
 ![](https://i.gyazo.com/3cd668893e56af61ef25970d4a7a19e0.png)
 
 
-
+# Planning Installation
 
 
 
