@@ -25,14 +25,14 @@
         .card-footer.text-white.bg-dark
           %p.card-createdat
             = "Latest Data Info"
-            .card-createdat__new-car
+            .card-createdat__new-car__title
               - distance = car.posts.order("posts.created_at desc").first&.distance
               - consumption = car.posts.order("posts.created_at desc").first&.consumption
               - projected_range = (distance.to_f/consumption.to_f*100).round(1)
               - if projected_range.nan?
                 = "No Data Yet"
               - else
-                = "#{projected_range} km by #{car.users.order("users.created_at desc").first&.nickname}"
+                = "#{projected_range} km Range by #{car.users.order("users.created_at desc").first&.nickname}"
                 .card-createdat__new-car__date
                   = "added at #{car.posts.order("posts.created_at desc").first&.created_at&.strftime('%Y/%m/%d')}"
               
