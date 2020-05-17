@@ -11,7 +11,7 @@
   
 ## 💬 Production Background
 :bangbang: READMEだけでなくアプリケーション内も英語表記となっております。日本のみならず世界中の電気自動車ユーザーに情報を共有してほしいという思いからです。  
-READMEに関して[日本語での紹介文](https://docs.google.com/document/d/1La2AMuKh35N6T-hoDb2Ai1dZvnH0GdFNMCpRIX4GDOU)を別に用意しておりますので、日本語表記の説明文を参照されたい方はこちらもどうぞご参照ください。
+READMEに関して[日本語での紹介文](https://docs.google.com/document/d/1La2AMuKh35N6T-hoDb2Ai1dZvnH0GdFNMCpRIX4GDOU)を別に用意しております。制作背景等をより詳細に記載しておりますので、日本語表記の説明文を参照されたい方はこちらもどうぞご参照ください。
 
   <br>
   
