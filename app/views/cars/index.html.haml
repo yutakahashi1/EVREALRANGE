@@ -29,7 +29,7 @@
 
 
 #body2.body2
-  = image_tag "environmental-protection_kv.jpg", class: "toppage-image2"
+  = image_tag "pw01_tesla0903-mdayside.jpg", class: "toppage-image2"
   .toppage-image2__text
     = "You can check the real range of all Electric Vehicles in the world."
     .toppage-exp2
@@ -42,13 +42,13 @@
   .toppage-image3__text
     = "You can share the Real Range of your EV to contribute the sustainable world."
     - if user_signed_in?
-      .toppage-exp
+      .toppage-exp3
         .toppage-exp__viewer
           = link_to "Share Real Range", new_post_path, class: "toppage-exp__viewer__viewer"
         .toppage-exp__user
           = link_to "Your Page", user_path(current_user), class: "toppage-exp__user__user"
     - else
-      .toppage-exp
+      .toppage-exp3
         .toppage-exp__viewer
           = link_to "Check Real Range", carmakers_path, class: "toppage-exp__viewer__viewer"
         .toppage-exp__user
