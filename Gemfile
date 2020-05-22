@@ -98,3 +98,5 @@ gem 'rails-i18n'
 gem 'fog-aws'
 
 gem 'mini_magick'
+
+gem 'google-analytics-rails'
