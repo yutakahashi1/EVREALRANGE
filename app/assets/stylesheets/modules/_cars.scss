@@ -1,4 +1,3 @@
-
 .wrapper.car {
   background: image-url("case_ogp_001.jpg");
   background-color: #0bd;
@@ -10,16 +9,18 @@
   background-blend-mode: darken;
 }
 
+.body0 {
+  position: relative;
+}
 
 .toppage-image0 {
   height: 800px;
   width: 100%;
-  position: relative;
 }
 
 .toppage-image0__text {
   position: absolute;
-  top: 70%;
+  top: 60%;
   left: 50%;
   -ms-transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
