@@ -64,6 +64,10 @@ h1:before {
   z-index: 2;
 }
 
+a.dropdown-item.bg-dark {
+  color: #fff;
+}
+
 @media (min-width: 992px) {
 .navbar-expand-lg .navbar-nav .nav-link {
   padding-right: 1rem;
