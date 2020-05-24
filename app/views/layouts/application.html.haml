@@ -17,8 +17,15 @@
       %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavDropdown", "data-toggle" => "collapse", :type => "button"}
         %span.navbar-toggler-icon
       #navbarNavDropdown.collapse.navbar-collapse
-        - if user_signed_in?
-          %ul.navbar-nav
+        %ul.navbar-nav
+          %li.nav-item.dropdown
+            %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Contact to admin for this site
+            .dropdown-menu.navbar-dark.bg-dark
+              %a.dropdown-item.bg-dark{:href => "#"} If you have any questions, corrections or suggestions, feel free to contact to my email or twitter.
+              .dropdown-divider
+              %a.dropdown-item.bg-dark{:href => "#"} federeryuukun1@gmail.com
+              %a.dropdown-item.bg-dark{:href => "https://twitter.com/EV_Native"} @EV_Native
+          - if user_signed_in?
             %li.nav-item.active
               = link_to "Home", cars_path, class: "nav-link"
             %li.nav-item
@@ -31,16 +38,14 @@
               = link_to "New Post", new_post_path, class: "nav-link"
             %li.nav-item
               = link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link"
-            
-        - else
-          %ul.navbar-nav
-            %li.nav-item.active
-              = link_to "Home", cars_path, class: "nav-link"
-            %li.nav-item
-              = link_to "Log In", new_user_session_path, class: "nav-link"
-            %li.nav-item
-              = link_to "Sign Up", new_user_registration_path, class: "nav-link"
-
+          - else
+            %ul.navbar-nav
+              %li.nav-item.active
+                = link_to "Home", cars_path, class: "nav-link"
+              %li.nav-item
+                = link_to "Log In", new_user_session_path, class: "nav-link"
+              %li.nav-item
+                = link_to "Sign Up", new_user_registration_path, class: "nav-link"
     .body 
       = yield
       
