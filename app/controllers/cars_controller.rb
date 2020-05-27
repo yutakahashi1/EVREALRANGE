@@ -64,7 +64,7 @@ class CarsController < ApplicationController
 
   private
   def car_params
-    params.require(:car).permit(:car_type, :image, :WLTP_range, :EPA_range, :carmaker_id)
+    params.require(:car).permit(:car_type, :image, :WLTP_range, :EPA_range, :carmaker_id, :electric_energy)
   end
 
   def move_to_index_except_admin

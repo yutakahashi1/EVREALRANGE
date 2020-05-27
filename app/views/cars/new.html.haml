@@ -3,7 +3,6 @@
     .post-form__title
       Car Data
     
-
     %form
     .form-inline
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectWeather"} car type
@@ -15,17 +14,12 @@
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectWeather"} image
     = f.file_field :image
 
-    
-
     %form
     .form-inline
-    %label.my-1.mr-2{:for =>"inlineFormCustomSelectMode"} Carmaker
+    %label.my-1.mr-2{:for =>"inlineFormCustomSelectMode"} kWh
+    .form-inline
+      = f.number_field :electric_energy, step: "0.1", class: "form-control", placeholder: "electric_energy"
     
-    
-   
-    //=f.select :carmaker_id, Carmaker.all.map { |carmaker| [carmaker.maker, carmaker.id] }, {selected: current_user.carmaker.id}, {class: "form-control"}
-  
-
     %form
     %label.my-1.mr-2{:for =>"inlineFormCustomSelectDistance"} WLTP Range
     .form-inline
