@@ -41,7 +41,6 @@ class CarsController < ApplicationController
   end
 
   def create
-    
     car = Car.create(car_params)
     redirect_to root_path
   end
