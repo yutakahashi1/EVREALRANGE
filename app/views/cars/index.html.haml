@@ -10,24 +10,6 @@
       .toppage-exp__user
         = link_to "EV owner", root_path(anchor: "body3"), class: "toppage-exp__user__user"
 
-.body1
-  .swiper-container
-    .swiper-wrapper
-      .swiper-slide 
-        = image_tag "nissan_top_image.jpg", class: "swiper-class1"
-      .swiper-slide
-        = image_tag "Tesla-Family-Crop-1920px.jpg", class: "swiper-class1"
-      .swiper-slide 
-        = image_tag "porsche.image.jpg", class: "swiper-class1"
-      .swiper-slide 
-        = image_tag "Tesla-Model-S-X-3-hero.jpg", class: "swiper-class1"
-      
-    .swiper-button-prev
-    .swiper-button-next
-    .swiper-pagination
-  %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"}
-
-
 #body2.body2
   = image_tag "pw01_tesla0903-mdayside.jpg", class: "toppage-image2"
   .toppage-image2__text
@@ -52,26 +34,3 @@
           = link_to "Check Real Range", carmakers_path, class: "toppage-exp__viewer__viewer"
         .toppage-exp__user
           = link_to "Sign up", new_user_registration_path, class: "toppage-exp__user__user"
-
-:javascript
-  var mySwiper = new Swiper('.swiper-container', {
-    loop: true,
-    effect: "fade",
-    //slidesPerView: 3,
-    autoplay: {
-    delay: 5000,
-    speed: 10000,
-    stopOnLastSlide: false,
-    disableOnInteraction: false,
-    reverseDirection: false
-    },
-    navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-    },
-    pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
-    clickable: true
-    }
-    });

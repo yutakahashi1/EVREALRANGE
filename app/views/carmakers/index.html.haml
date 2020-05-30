@@ -1,3 +1,18 @@
+.body1
+  .swiper-container
+    .swiper-wrapper
+      .swiper-slide 
+        = image_tag "nissan_top_image.jpg", class: "swiper-class1"
+      .swiper-slide
+        = image_tag "Tesla-Family-Crop-1920px.jpg", class: "swiper-class1"
+      .swiper-slide
+        = image_tag "ionity_km_01.jpg", class: "swiper-class1"
+      .swiper-slide 
+        = image_tag "porsche.image.jpg", class: "swiper-class1"
+      .swiper-slide 
+        = image_tag "1-1Z5251R026214.jpg", class: "swiper-class1"
+    .swiper-pagination
+  %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"}
 .container
   .row.row-cols-1.row-cols-md-1
   - @carmakers.each do |carmaker|
@@ -17,13 +32,25 @@
                 = "#{carmaker.cars.order("cars.created_at desc").first&.car_type}"  
               .card-createdat__new-car__date
                 = "added at #{carmaker.cars.order("cars.created_at desc").first&.created_at&.strftime('%Y/%m/%d')}"
-              
-          
-              
-              
-            
-           
-          
 
-            
-           
+:javascript
+  var mySwiper = new Swiper('.swiper-container', {
+    loop: true,
+    effect: "fade",
+    autoplay: {
+    delay: 5000,
+    speed: 10000,
+    stopOnLastSlide: false,
+    disableOnInteraction: false,
+    reverseDirection: false
+    },
+    navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+    },
+    pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true
+    }
+    });
